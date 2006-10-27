@@ -1,0 +1,183 @@
+poppler
+------------------------------------------
+Poppler is a fork of the xpdf PDF viewer developed by Derek Noonburg
+of Glyph and Cog, LLC.  The purpose of forking xpdf is twofold.
+First, we want to provide PDF rendering functionality as a shared
+library, to centralize the maintenence effort.  Today a number of
+applications incorporate the xpdf code base, and whenever a security
+issue is discovered, all these applications exchange patches and put
+out new releases.  In turn, all distributions must package and release
+new version of these xpdf based viewers.  It's safe to say that
+there's a lot of duplicated effort with the current situaion.  Even if
+poppler in the short term introduces yet another xpdf derived code
+base to the world, we hope that over time these applications will
+adopt poppler.  After all, we only need one application to use poppler
+to break even.
+
+Second, we would like to move libpoppler forward in a number of areas
+that doesn't fit within the goals of xpdf.  By design, xpdf depends on
+very few libraries and runs a wide range of X based platforms.  This
+is a strong feature and reasonable design goal.  However, with poppler
+we would like to replace parts of xpdf that are now available as
+standard components of modern Unix desktop environments.  One such
+example is fontconfig, which solves the problem of matching and
+locating fonts on the system, in a standardized and well understood
+way.  Another example is cairo, which provides high quality 2D
+rendering.  See the file TODO for a list of planned changes.
+
+Runtime requirements:
+  cygwin-1.5.21-2
+  libfontconfig1-2.3.2-1
+  libjpeg62-6b-11
+
+Additional requirements for poppler-glib:
+  gtk2-x11-2.8.20-1
+  libcairo2-1.0.4-1
+
+Additional requirements for poppler-qt:
+  qt3-3.3.6-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.21-2
+  autoconf2.5-2.60-1
+  automake1.9-1.9.6-1
+  binutils-20060817-1
+  cygport-0.2.6-1
+  gawk-3.1.5-2
+  gcc-core-3.4.4-1
+  gcc-g++-3.4.4-1
+  libtool1.5-1.5.22-1
+  make-3.81-1
+  pkg-config-0.20-1
+  sed-4.1.5-1
+
+Canonical website:
+  http://poppler.freedesktop.org/
+
+-------------------------------------------
+
+Build instructions:
+  unpack poppler-0.4.5-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./poppler-0.4.5-X.cygport all
+
+This will create:
+  /usr/src/libpoppler1-0.4.5-X.tar.bz2
+  /usr/src/libpoppler-devel-0.4.5-X.tar.bz2
+  /usr/src/libpoppler-glib_1-0.4.5-X.tar.bz2
+  /usr/src/libpoppler-qt_1-0.4.5-X.tar.bz2
+  /usr/src/poppler-0.4.5-X-src.tar.bz2
+  /usr/src/poppler-0.4.5-X.tar.bz2
+  /usr/src/poppler-doc-0.4.5-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the main package:
+
+  /usr/bin/pdffonts.exe
+  /usr/bin/pdfimages.exe
+  /usr/bin/pdfinfo.exe
+  /usr/bin/pdftohtml.exe
+  /usr/bin/pdftoppm.exe
+  /usr/bin/pdftops.exe
+  /usr/bin/pdftotext.exe
+  /usr/share/doc/Cygwin/poppler-0.5.4.README
+  /usr/share/doc/poppler-0.5.4/AUTHORS
+  /usr/share/doc/poppler-0.5.4/COPYING
+  /usr/share/doc/poppler-0.5.4/ChangeLog
+  /usr/share/doc/poppler-0.5.4/INSTALL
+  /usr/share/doc/poppler-0.5.4/NEWS
+  /usr/share/doc/poppler-0.5.4/README
+  /usr/share/doc/poppler-0.5.4/README-XPDF
+  /usr/share/doc/poppler-0.5.4/TODO
+  /usr/share/man/man1/pdffonts.1.gz
+  /usr/share/man/man1/pdfimages.1.gz
+  /usr/share/man/man1/pdfinfo.1.gz
+  /usr/share/man/man1/pdftohtml.1.gz
+  /usr/share/man/man1/pdftoppm.1.gz
+  /usr/share/man/man1/pdftops.1.gz
+  /usr/share/man/man1/pdftotext.1.gz
+
+(libpoppler1)
+  /usr/bin/cygpoppler-1.dll
+
+(libpoppler-glib_1)
+  /usr/bin/cygpoppler-glib-1.dll
+
+(libpoppler-qt_1)
+  /usr/bin/cygpoppler-qt-1.dll
+
+(libpoppler-devel)
+  /usr/include/poppler/glib/poppler-action.h
+  /usr/include/poppler/glib/poppler-attachment.h
+  /usr/include/poppler/glib/poppler-document.h
+  /usr/include/poppler/glib/poppler-enums.h
+  /usr/include/poppler/glib/poppler-features.h
+  /usr/include/poppler/glib/poppler-page.h
+  /usr/include/poppler/glib/poppler.h
+  /usr/include/poppler/poppler-link-qt3.h
+  /usr/include/poppler/poppler-page-transition.h
+  /usr/include/poppler/poppler-qt.h
+  /usr/lib/libpoppler-glib.dll.a
+  /usr/lib/libpoppler-glib.la
+  /usr/lib/libpoppler-qt.dll.a
+  /usr/lib/libpoppler-qt.la
+  /usr/lib/libpoppler.dll.a
+  /usr/lib/libpoppler.la
+  /usr/lib/pkgconfig/poppler-cairo.pc
+  /usr/lib/pkgconfig/poppler-glib.pc
+  /usr/lib/pkgconfig/poppler-qt.pc
+  /usr/lib/pkgconfig/poppler-splash.pc
+  /usr/lib/pkgconfig/poppler.pc
+
+(poppler-doc)
+  /usr/share/gtk-doc/html/poppler/ch01.html
+  /usr/share/gtk-doc/html/poppler/home.png
+  /usr/share/gtk-doc/html/poppler/index.html
+  /usr/share/gtk-doc/html/poppler/index.sgml
+  /usr/share/gtk-doc/html/poppler/left.png
+  /usr/share/gtk-doc/html/poppler/poppler-poppler-action.html
+  /usr/share/gtk-doc/html/poppler/poppler-poppler-document.html
+  /usr/share/gtk-doc/html/poppler/poppler-poppler-enums.html
+  /usr/share/gtk-doc/html/poppler/poppler-poppler-page.html
+  /usr/share/gtk-doc/html/poppler/poppler-poppler.html
+  /usr/share/gtk-doc/html/poppler/poppler.devhelp
+  /usr/share/gtk-doc/html/poppler/poppler.devhelp2
+  /usr/share/gtk-doc/html/poppler/right.png
+  /usr/share/gtk-doc/html/poppler/style.css
+  /usr/share/gtk-doc/html/poppler/up.png
+
+------------------
+
+Port Notes:
+
+----- version 0.5.4-1 -----
+Version and ABI bump.
+
+----- version 0.4.5-1 -----
+Version bump for security vulnerability CVE-2006-0301.
+Rearranged packaging scheme.
+
+----- version 0.4.4-1 -----
+Version bump for security vulnerabilities CVE-2005-3624, 
+CVE-2005-3625, CVE-2005-3627.
+
+----- version 0.4.2-2 -----
+Patched security vulnerability CAN-2005-3193.
+Broke out separate -devel package.
+
+----- version 0.4.2-1 -----
+Version bump.
+
+----- version 0.4.1-1 -----
+Version bump.
+
+----- version 0.4.0-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
