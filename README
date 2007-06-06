@@ -26,31 +26,31 @@ way.  Another example is cairo, which provides high quality 2D
 rendering.  See the file TODO for a list of planned changes.
 
 Runtime requirements:
-  cygwin-1.5.21-2
-  libfontconfig1-2.3.2-1
-  libjpeg62-6b-11
+  cygwin-1.5.24-2
+  libfontconfig1-2.3.2-2
+  libjpeg62-6b-12
 
 Additional requirements for poppler-glib:
-  gtk2-x11-2.8.20-1
-  libcairo2-1.0.4-1
+  gtk2-x11-2.10.12-1
+  libcairo2-1.4.6-1
 
 Additional requirements for poppler-qt:
-  qt3-3.3.6-1
+  qt3-3.3.8-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.21-2
-  autoconf2.5-2.60-1
-  automake1.9-1.9.6-1
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.9-1.9.6-2
   binutils-20060817-1
-  cygport-0.2.6-1
-  gawk-3.1.5-2
-  gcc-core-3.4.4-1
-  gcc-g++-3.4.4-1
-  libtool1.5-1.5.22-1
+  cygport-0.2.11-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  libtool1.5-1.5.23a-2
   make-3.81-1
-  pkg-config-0.20-1
-  sed-4.1.5-1
+  pkg-config-0.21-1
+  sed-4.1.5-2
 
 Canonical website:
   http://poppler.freedesktop.org/
@@ -58,25 +58,26 @@ Canonical website:
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.4.5-X-src.tar.bz2
+  unpack poppler-0.5.4-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.4.5-X.cygport all
+  cygport ./poppler-0.5.4-X.cygport all
 
 This will create:
-  /usr/src/libpoppler1-0.4.5-X.tar.bz2
-  /usr/src/libpoppler-devel-0.4.5-X.tar.bz2
-  /usr/src/libpoppler-glib_1-0.4.5-X.tar.bz2
-  /usr/src/libpoppler-qt_1-0.4.5-X.tar.bz2
-  /usr/src/poppler-0.4.5-X-src.tar.bz2
-  /usr/src/poppler-0.4.5-X.tar.bz2
-  /usr/src/poppler-doc-0.4.5-X.tar.bz2
+  /usr/src/libpoppler1-0.5.4-X.tar.bz2
+  /usr/src/libpoppler-devel-0.5.4-X.tar.bz2
+  /usr/src/libpoppler-glib_1-0.5.4-X.tar.bz2
+  /usr/src/libpoppler-qt_1-0.5.4-X.tar.bz2
+  /usr/src/poppler-0.5.4-X-src.tar.bz2
+  /usr/src/poppler-0.5.4-X.tar.bz2
+  /usr/src/poppler-data-0.5.4-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the main package:
+Files included in the binary packages:
 
+(poppler)
   /usr/bin/pdffonts.exe
   /usr/bin/pdfimages.exe
   /usr/bin/pdfinfo.exe
@@ -100,6 +101,181 @@ Files included in the main package:
   /usr/share/man/man1/pdftoppm.1.gz
   /usr/share/man/man1/pdftops.1.gz
   /usr/share/man/man1/pdftotext.1.gz
+
+(poppler-data)
+  /usr/share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-0
+  /usr/share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-1
+  /usr/share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-2
+  /usr/share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-3
+  /usr/share/poppler/cMap/Adobe-CNS1/Adobe-CNS1-UCS2
+  /usr/share/poppler/cMap/Adobe-CNS1/B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/B5pc-H
+  /usr/share/poppler/cMap/Adobe-CNS1/B5pc-UCS2
+  /usr/share/poppler/cMap/Adobe-CNS1/B5pc-UCS2C
+  /usr/share/poppler/cMap/Adobe-CNS1/B5pc-V
+  /usr/share/poppler/cMap/Adobe-CNS1/CNS-EUC-H
+  /usr/share/poppler/cMap/Adobe-CNS1/CNS-EUC-V
+  /usr/share/poppler/cMap/Adobe-CNS1/CNS1-H
+  /usr/share/poppler/cMap/Adobe-CNS1/CNS1-V
+  /usr/share/poppler/cMap/Adobe-CNS1/CNS2-H
+  /usr/share/poppler/cMap/Adobe-CNS1/CNS2-V
+  /usr/share/poppler/cMap/Adobe-CNS1/ETHK-B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/ETHK-B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/ETen-B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/ETen-B5-UCS2
+  /usr/share/poppler/cMap/Adobe-CNS1/ETen-B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/ETenms-B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/ETenms-B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/HKdla-B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/HKdla-B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/HKdlb-B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/HKdlb-B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/HKgccs-B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/HKgccs-B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/HKm314-B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/HKm314-B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/HKm471-B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/HKm471-B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/HKscs-B5-H
+  /usr/share/poppler/cMap/Adobe-CNS1/HKscs-B5-V
+  /usr/share/poppler/cMap/Adobe-CNS1/UniCNS-UCS2-H
+  /usr/share/poppler/cMap/Adobe-CNS1/UniCNS-UCS2-V
+  /usr/share/poppler/cMap/Adobe-CNS1/UniCNS-UTF16-H
+  /usr/share/poppler/cMap/Adobe-CNS1/UniCNS-UTF16-V
+  /usr/share/poppler/cMap/Adobe-CNS1/UniCNS-UTF8-H
+  /usr/share/poppler/cMap/Adobe-CNS1/UniCNS-UTF8-V
+  /usr/share/poppler/cMap/Adobe-GB1/Adobe-GB1-0
+  /usr/share/poppler/cMap/Adobe-GB1/Adobe-GB1-1
+  /usr/share/poppler/cMap/Adobe-GB1/Adobe-GB1-2
+  /usr/share/poppler/cMap/Adobe-GB1/Adobe-GB1-3
+  /usr/share/poppler/cMap/Adobe-GB1/Adobe-GB1-4
+  /usr/share/poppler/cMap/Adobe-GB1/Adobe-GB1-UCS2
+  /usr/share/poppler/cMap/Adobe-GB1/GB-EUC-H
+  /usr/share/poppler/cMap/Adobe-GB1/GB-EUC-V
+  /usr/share/poppler/cMap/Adobe-GB1/GB-H
+  /usr/share/poppler/cMap/Adobe-GB1/GB-V
+  /usr/share/poppler/cMap/Adobe-GB1/GBK-EUC-H
+  /usr/share/poppler/cMap/Adobe-GB1/GBK-EUC-UCS2
+  /usr/share/poppler/cMap/Adobe-GB1/GBK-EUC-V
+  /usr/share/poppler/cMap/Adobe-GB1/GBK2K-H
+  /usr/share/poppler/cMap/Adobe-GB1/GBK2K-V
+  /usr/share/poppler/cMap/Adobe-GB1/GBKp-EUC-H
+  /usr/share/poppler/cMap/Adobe-GB1/GBKp-EUC-V
+  /usr/share/poppler/cMap/Adobe-GB1/GBT-EUC-H
+  /usr/share/poppler/cMap/Adobe-GB1/GBT-EUC-V
+  /usr/share/poppler/cMap/Adobe-GB1/GBT-H
+  /usr/share/poppler/cMap/Adobe-GB1/GBT-V
+  /usr/share/poppler/cMap/Adobe-GB1/GBTpc-EUC-H
+  /usr/share/poppler/cMap/Adobe-GB1/GBTpc-EUC-V
+  /usr/share/poppler/cMap/Adobe-GB1/GBpc-EUC-H
+  /usr/share/poppler/cMap/Adobe-GB1/GBpc-EUC-UCS2
+  /usr/share/poppler/cMap/Adobe-GB1/GBpc-EUC-UCS2C
+  /usr/share/poppler/cMap/Adobe-GB1/GBpc-EUC-V
+  /usr/share/poppler/cMap/Adobe-GB1/UniGB-UCS2-H
+  /usr/share/poppler/cMap/Adobe-GB1/UniGB-UCS2-V
+  /usr/share/poppler/cMap/Adobe-GB1/UniGB-UTF16-H
+  /usr/share/poppler/cMap/Adobe-GB1/UniGB-UTF16-V
+  /usr/share/poppler/cMap/Adobe-GB1/UniGB-UTF8-H
+  /usr/share/poppler/cMap/Adobe-GB1/UniGB-UTF8-V
+  /usr/share/poppler/cMap/Adobe-Japan1/78-EUC-H
+  /usr/share/poppler/cMap/Adobe-Japan1/78-EUC-V
+  /usr/share/poppler/cMap/Adobe-Japan1/78-H
+  /usr/share/poppler/cMap/Adobe-Japan1/78-RKSJ-H
+  /usr/share/poppler/cMap/Adobe-Japan1/78-RKSJ-V
+  /usr/share/poppler/cMap/Adobe-Japan1/78-V
+  /usr/share/poppler/cMap/Adobe-Japan1/78ms-RKSJ-H
+  /usr/share/poppler/cMap/Adobe-Japan1/78ms-RKSJ-V
+  /usr/share/poppler/cMap/Adobe-Japan1/83pv-RKSJ-H
+  /usr/share/poppler/cMap/Adobe-Japan1/90ms-RKSJ-H
+  /usr/share/poppler/cMap/Adobe-Japan1/90ms-RKSJ-UCS2
+  /usr/share/poppler/cMap/Adobe-Japan1/90ms-RKSJ-V
+  /usr/share/poppler/cMap/Adobe-Japan1/90msp-RKSJ-H
+  /usr/share/poppler/cMap/Adobe-Japan1/90msp-RKSJ-V
+  /usr/share/poppler/cMap/Adobe-Japan1/90pv-RKSJ-H
+  /usr/share/poppler/cMap/Adobe-Japan1/90pv-RKSJ-UCS2
+  /usr/share/poppler/cMap/Adobe-Japan1/90pv-RKSJ-UCS2C
+  /usr/share/poppler/cMap/Adobe-Japan1/90pv-RKSJ-V
+  /usr/share/poppler/cMap/Adobe-Japan1/Add-H
+  /usr/share/poppler/cMap/Adobe-Japan1/Add-RKSJ-H
+  /usr/share/poppler/cMap/Adobe-Japan1/Add-RKSJ-V
+  /usr/share/poppler/cMap/Adobe-Japan1/Add-V
+  /usr/share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-0
+  /usr/share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-1
+  /usr/share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-2
+  /usr/share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-3
+  /usr/share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-4
+  /usr/share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-UCS2
+  /usr/share/poppler/cMap/Adobe-Japan1/EUC-H
+  /usr/share/poppler/cMap/Adobe-Japan1/EUC-V
+  /usr/share/poppler/cMap/Adobe-Japan1/Ext-H
+  /usr/share/poppler/cMap/Adobe-Japan1/Ext-RKSJ-H
+  /usr/share/poppler/cMap/Adobe-Japan1/Ext-RKSJ-V
+  /usr/share/poppler/cMap/Adobe-Japan1/Ext-V
+  /usr/share/poppler/cMap/Adobe-Japan1/H
+  /usr/share/poppler/cMap/Adobe-Japan1/Hankaku
+  /usr/share/poppler/cMap/Adobe-Japan1/Hiragana
+  /usr/share/poppler/cMap/Adobe-Japan1/Katakana
+  /usr/share/poppler/cMap/Adobe-Japan1/NWP-H
+  /usr/share/poppler/cMap/Adobe-Japan1/NWP-V
+  /usr/share/poppler/cMap/Adobe-Japan1/RKSJ-H
+  /usr/share/poppler/cMap/Adobe-Japan1/RKSJ-V
+  /usr/share/poppler/cMap/Adobe-Japan1/Roman
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJIS-UCS2-H
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJIS-UCS2-HW-H
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJIS-UCS2-HW-V
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJIS-UCS2-V
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJIS-UTF16-H
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJIS-UTF16-V
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJIS-UTF8-H
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJIS-UTF8-V
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJISPro-UCS2-HW-V
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJISPro-UCS2-V
+  /usr/share/poppler/cMap/Adobe-Japan1/UniJISPro-UTF8-V
+  /usr/share/poppler/cMap/Adobe-Japan1/V
+  /usr/share/poppler/cMap/Adobe-Japan1/WP-Symbol
+  /usr/share/poppler/cMap/Adobe-Korea1/Adobe-Korea1-0
+  /usr/share/poppler/cMap/Adobe-Korea1/Adobe-Korea1-1
+  /usr/share/poppler/cMap/Adobe-Korea1/Adobe-Korea1-2
+  /usr/share/poppler/cMap/Adobe-Korea1/Adobe-Korea1-UCS2
+  /usr/share/poppler/cMap/Adobe-Korea1/KSC-EUC-H
+  /usr/share/poppler/cMap/Adobe-Korea1/KSC-EUC-V
+  /usr/share/poppler/cMap/Adobe-Korea1/KSC-H
+  /usr/share/poppler/cMap/Adobe-Korea1/KSC-Johab-H
+  /usr/share/poppler/cMap/Adobe-Korea1/KSC-Johab-V
+  /usr/share/poppler/cMap/Adobe-Korea1/KSC-V
+  /usr/share/poppler/cMap/Adobe-Korea1/KSCms-UHC-H
+  /usr/share/poppler/cMap/Adobe-Korea1/KSCms-UHC-HW-H
+  /usr/share/poppler/cMap/Adobe-Korea1/KSCms-UHC-HW-V
+  /usr/share/poppler/cMap/Adobe-Korea1/KSCms-UHC-UCS2
+  /usr/share/poppler/cMap/Adobe-Korea1/KSCms-UHC-V
+  /usr/share/poppler/cMap/Adobe-Korea1/KSCpc-EUC-H
+  /usr/share/poppler/cMap/Adobe-Korea1/KSCpc-EUC-UCS2
+  /usr/share/poppler/cMap/Adobe-Korea1/KSCpc-EUC-UCS2C
+  /usr/share/poppler/cMap/Adobe-Korea1/KSCpc-EUC-V
+  /usr/share/poppler/cMap/Adobe-Korea1/UniKS-UCS2-H
+  /usr/share/poppler/cMap/Adobe-Korea1/UniKS-UCS2-V
+  /usr/share/poppler/cMap/Adobe-Korea1/UniKS-UTF16-H
+  /usr/share/poppler/cMap/Adobe-Korea1/UniKS-UTF16-V
+  /usr/share/poppler/cMap/Adobe-Korea1/UniKS-UTF8-H
+  /usr/share/poppler/cMap/Adobe-Korea1/UniKS-UTF8-V
+  /usr/share/poppler/cidToUnicode/Adobe-CNS1
+  /usr/share/poppler/cidToUnicode/Adobe-GB1
+  /usr/share/poppler/cidToUnicode/Adobe-Japan1
+  /usr/share/poppler/cidToUnicode/Adobe-Korea1
+  /usr/share/poppler/nameToUnicode/Bulgarian
+  /usr/share/poppler/nameToUnicode/Thai
+  /usr/share/poppler/unicodeMap/Big5
+  /usr/share/poppler/unicodeMap/Big5ascii
+  /usr/share/poppler/unicodeMap/EUC-CN
+  /usr/share/poppler/unicodeMap/EUC-JP
+  /usr/share/poppler/unicodeMap/GBK
+  /usr/share/poppler/unicodeMap/ISO-2022-CN
+  /usr/share/poppler/unicodeMap/ISO-2022-JP
+  /usr/share/poppler/unicodeMap/ISO-2022-KR
+  /usr/share/poppler/unicodeMap/KOI8-R
+  /usr/share/poppler/unicodeMap/Shift-JIS
+  /usr/share/poppler/unicodeMap/TIS-620
 
 (libpoppler1)
   /usr/bin/cygpoppler-1.dll
@@ -132,8 +308,6 @@ Files included in the main package:
   /usr/lib/pkgconfig/poppler-qt.pc
   /usr/lib/pkgconfig/poppler-splash.pc
   /usr/lib/pkgconfig/poppler.pc
-
-(poppler-doc)
   /usr/share/gtk-doc/html/poppler/ch01.html
   /usr/share/gtk-doc/html/poppler/home.png
   /usr/share/gtk-doc/html/poppler/index.html
@@ -153,6 +327,9 @@ Files included in the main package:
 ------------------
 
 Port Notes:
+
+----- version 0.5.4-2 -----
+Rebuilt to include encoding data.
 
 ----- version 0.5.4-1 -----
 Version and ABI bump.
