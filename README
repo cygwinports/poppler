@@ -287,6 +287,60 @@ Files included in the binary packages:
   /usr/bin/cygpoppler-qt-1.dll
 
 (libpoppler-devel)
+  /usr/include/poppler/Annot.h
+  /usr/include/poppler/Array.h
+  /usr/include/poppler/BaseFile.h
+  /usr/include/poppler/BuiltinFont.h
+  /usr/include/poppler/BuiltinFontTables.h
+  /usr/include/poppler/CMap.h
+  /usr/include/poppler/Catalog.h
+  /usr/include/poppler/CharCodeToUnicode.h
+  /usr/include/poppler/CharTypes.h
+  /usr/include/poppler/CompactFontTables.h
+  /usr/include/poppler/Decrypt.h
+  /usr/include/poppler/Dict.h
+  /usr/include/poppler/Error.h
+  /usr/include/poppler/ErrorCodes.h
+  /usr/include/poppler/FontEncodingTables.h
+  /usr/include/poppler/FontInfo.h
+  /usr/include/poppler/Function.cc
+  /usr/include/poppler/Function.h
+  /usr/include/poppler/Gfx.h
+  /usr/include/poppler/GfxFont.h
+  /usr/include/poppler/GfxState.h
+  /usr/include/poppler/GlobalParams.h
+  /usr/include/poppler/JArithmeticDecoder.h
+  /usr/include/poppler/JBIG2Stream.h
+  /usr/include/poppler/JPXStream.h
+  /usr/include/poppler/Lexer.h
+  /usr/include/poppler/Link.h
+  /usr/include/poppler/NameToCharCode.h
+  /usr/include/poppler/NameToUnicodeTable.h
+  /usr/include/poppler/Object.h
+  /usr/include/poppler/Outline.h
+  /usr/include/poppler/OutputDev.h
+  /usr/include/poppler/PDFDoc.h
+  /usr/include/poppler/PDFDocEncoding.h
+  /usr/include/poppler/PSOutputDev.h
+  /usr/include/poppler/PSTokenizer.h
+  /usr/include/poppler/Page.h
+  /usr/include/poppler/Parser.h
+  /usr/include/poppler/ProfileData.h
+  /usr/include/poppler/SecurityHandler.h
+  /usr/include/poppler/SplashOutputDev.h
+  /usr/include/poppler/Stream-CCITT.h
+  /usr/include/poppler/Stream.h
+  /usr/include/poppler/TextOutputDev.h
+  /usr/include/poppler/UGooString.h
+  /usr/include/poppler/UTF8.h
+  /usr/include/poppler/UnicodeCClassTables.h
+  /usr/include/poppler/UnicodeCompTables.h
+  /usr/include/poppler/UnicodeDecompTables.h
+  /usr/include/poppler/UnicodeMap.h
+  /usr/include/poppler/UnicodeMapTables.h
+  /usr/include/poppler/UnicodeTypeTable.h
+  /usr/include/poppler/XRef.h
+  /usr/include/poppler/XpdfPluginAPI.h
   /usr/include/poppler/glib/poppler-action.h
   /usr/include/poppler/glib/poppler-attachment.h
   /usr/include/poppler/glib/poppler-document.h
@@ -294,9 +348,43 @@ Files included in the binary packages:
   /usr/include/poppler/glib/poppler-features.h
   /usr/include/poppler/glib/poppler-page.h
   /usr/include/poppler/glib/poppler.h
+  /usr/include/poppler/goo/FixedPoint.h
+  /usr/include/poppler/goo/GooHash.h
+  /usr/include/poppler/goo/GooList.h
+  /usr/include/poppler/goo/GooMutex.h
+  /usr/include/poppler/goo/GooString.h
+  /usr/include/poppler/goo/GooTimer.h
+  /usr/include/poppler/goo/GooVector.h
+  /usr/include/poppler/goo/gfile.h
+  /usr/include/poppler/goo/gmem.h
+  /usr/include/poppler/goo/gtypes.h
+  /usr/include/poppler/poppler-config.h
   /usr/include/poppler/poppler-link-qt3.h
   /usr/include/poppler/poppler-page-transition.h
   /usr/include/poppler/poppler-qt.h
+  /usr/include/poppler/splash/Splash.h
+  /usr/include/poppler/splash/SplashBitmap.h
+  /usr/include/poppler/splash/SplashClip.h
+  /usr/include/poppler/splash/SplashErrorCodes.h
+  /usr/include/poppler/splash/SplashFTFont.h
+  /usr/include/poppler/splash/SplashFTFontEngine.h
+  /usr/include/poppler/splash/SplashFTFontFile.h
+  /usr/include/poppler/splash/SplashFont.h
+  /usr/include/poppler/splash/SplashFontEngine.h
+  /usr/include/poppler/splash/SplashFontFile.h
+  /usr/include/poppler/splash/SplashFontFileID.h
+  /usr/include/poppler/splash/SplashGlyphBitmap.h
+  /usr/include/poppler/splash/SplashMath.h
+  /usr/include/poppler/splash/SplashPath.h
+  /usr/include/poppler/splash/SplashPattern.h
+  /usr/include/poppler/splash/SplashScreen.h
+  /usr/include/poppler/splash/SplashState.h
+  /usr/include/poppler/splash/SplashT1Font.h
+  /usr/include/poppler/splash/SplashT1FontEngine.h
+  /usr/include/poppler/splash/SplashT1FontFile.h
+  /usr/include/poppler/splash/SplashTypes.h
+  /usr/include/poppler/splash/SplashXPath.h
+  /usr/include/poppler/splash/SplashXPathScanner.h
   /usr/lib/libpoppler-glib.dll.a
   /usr/lib/libpoppler-glib.la
   /usr/lib/libpoppler-qt.dll.a
@@ -327,6 +415,10 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 0.5.4-2 -----
+Includes Gentoo patches for CVE-2007-0104 and CVE-2007-3387.
+Xpdf headers are now installed (required for AbiWord PDF plugin).
 
 ----- version 0.5.4-2 -----
 Rebuilt to include encoding data.
