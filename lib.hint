@@ -1,5 +1,5 @@
 category: Libs Text
-requires: cygwin libfontconfig1 libjpeg62 poppler-data
+requires: cygwin libfontconfig1 libfreetype26 libjpeg62 libxml2 poppler-data
 external-source: poppler
 sdesc: "PDF rendering library (generic runtime)"
 ldesc: "Poppler is a fork of the xpdf PDF viewer developed by Derek Noonburg

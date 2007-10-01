@@ -28,14 +28,16 @@ rendering.  See the file TODO for a list of planned changes.
 Runtime requirements:
   cygwin-1.5.24-2
   libfontconfig1-2.3.2-2
+  libfreetype26-2.3.5-1
   libjpeg62-6b-12
-
-Additional requirements for poppler-glib:
-  gtk2-x11-2.10.12-1
-  libcairo2-1.4.6-1
-
-Additional requirements for poppler-qt:
-  qt3-3.3.8-1
+  libxml2-2.6.30-1
+(libpoppler-glib)
+  gdk-pixbuf2-2.10.14-1
+  glib2-2.12.13-1
+  gtk2-x11-2.10.14-1
+  libcairo2-1.4.10-1
+(libpoppler-qt)
+  qt3-3.3.8-3
 
 Build requirements:
 (besides corresponding -devel packages)
@@ -55,23 +57,26 @@ Build requirements:
 Canonical website:
   http://poppler.freedesktop.org/
 
+Canonical download:
+  http://poppler.freedesktop.org/
+
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.5.4-X-src.tar.bz2
+  unpack poppler-0.6-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.5.4-X.cygport all
+  cygport ./poppler-0.6-X.cygport all
 
 This will create:
-  /usr/src/libpoppler1-0.5.4-X.tar.bz2
-  /usr/src/libpoppler-devel-0.5.4-X.tar.bz2
-  /usr/src/libpoppler-glib_1-0.5.4-X.tar.bz2
-  /usr/src/libpoppler-qt_1-0.5.4-X.tar.bz2
-  /usr/src/poppler-0.5.4-X-src.tar.bz2
-  /usr/src/poppler-0.5.4-X.tar.bz2
-  /usr/src/poppler-data-0.5.4-X.tar.bz2
+  /usr/src/libpoppler2-0.6-X.tar.bz2
+  /usr/src/libpoppler-devel-0.6-X.tar.bz2
+  /usr/src/libpoppler-glib_2-0.6-X.tar.bz2
+  /usr/src/libpoppler-qt_2-0.6-X.tar.bz2
+  /usr/src/poppler-0.6-X-src.tar.bz2
+  /usr/src/poppler-0.6-X.tar.bz2
+  /usr/src/poppler-data-0.6-X.tar.bz2
 
 -------------------------------------------
 
@@ -81,19 +86,19 @@ Files included in the binary packages:
   /usr/bin/pdffonts.exe
   /usr/bin/pdfimages.exe
   /usr/bin/pdfinfo.exe
+  /usr/bin/pdftoabw.exe
   /usr/bin/pdftohtml.exe
   /usr/bin/pdftoppm.exe
   /usr/bin/pdftops.exe
   /usr/bin/pdftotext.exe
-  /usr/share/doc/Cygwin/poppler-0.5.4.README
-  /usr/share/doc/poppler-0.5.4/AUTHORS
-  /usr/share/doc/poppler-0.5.4/COPYING
-  /usr/share/doc/poppler-0.5.4/ChangeLog
-  /usr/share/doc/poppler-0.5.4/INSTALL
-  /usr/share/doc/poppler-0.5.4/NEWS
-  /usr/share/doc/poppler-0.5.4/README
-  /usr/share/doc/poppler-0.5.4/README-XPDF
-  /usr/share/doc/poppler-0.5.4/TODO
+  /usr/share/doc/Cygwin/poppler-0.6.README
+  /usr/share/doc/poppler-0.6/AUTHORS
+  /usr/share/doc/poppler-0.6/COPYING
+  /usr/share/doc/poppler-0.6/ChangeLog
+  /usr/share/doc/poppler-0.6/INSTALL
+  /usr/share/doc/poppler-0.6/NEWS
+  /usr/share/doc/poppler-0.6/README
+  /usr/share/doc/poppler-0.6/TODO
   /usr/share/man/man1/pdffonts.1.gz
   /usr/share/man/man1/pdfimages.1.gz
   /usr/share/man/man1/pdfinfo.1.gz
@@ -277,14 +282,14 @@ Files included in the binary packages:
   /usr/share/poppler/unicodeMap/Shift-JIS
   /usr/share/poppler/unicodeMap/TIS-620
 
-(libpoppler1)
-  /usr/bin/cygpoppler-1.dll
+(libpoppler2)
+  /usr/bin/cygpoppler-2.dll
 
-(libpoppler-glib_1)
-  /usr/bin/cygpoppler-glib-1.dll
+(libpoppler-glib_2)
+  /usr/bin/cygpoppler-glib-2.dll
 
-(libpoppler-qt_1)
-  /usr/bin/cygpoppler-qt-1.dll
+(libpoppler-qt_2)
+  /usr/bin/cygpoppler-qt-2.dll
 
 (libpoppler-devel)
   /usr/include/poppler/Annot.h
@@ -303,6 +308,7 @@ Files included in the binary packages:
   /usr/include/poppler/ErrorCodes.h
   /usr/include/poppler/FontEncodingTables.h
   /usr/include/poppler/FontInfo.h
+  /usr/include/poppler/Form.h
   /usr/include/poppler/Function.cc
   /usr/include/poppler/Function.h
   /usr/include/poppler/Gfx.h
@@ -324,14 +330,16 @@ Files included in the binary packages:
   /usr/include/poppler/PSOutputDev.h
   /usr/include/poppler/PSTokenizer.h
   /usr/include/poppler/Page.h
+  /usr/include/poppler/PageTransition.h
   /usr/include/poppler/Parser.h
+  /usr/include/poppler/PreScanOutputDev.h
   /usr/include/poppler/ProfileData.h
   /usr/include/poppler/SecurityHandler.h
+  /usr/include/poppler/Sound.h
   /usr/include/poppler/SplashOutputDev.h
   /usr/include/poppler/Stream-CCITT.h
   /usr/include/poppler/Stream.h
   /usr/include/poppler/TextOutputDev.h
-  /usr/include/poppler/UGooString.h
   /usr/include/poppler/UTF8.h
   /usr/include/poppler/UnicodeCClassTables.h
   /usr/include/poppler/UnicodeCompTables.h
@@ -346,6 +354,7 @@ Files included in the binary packages:
   /usr/include/poppler/glib/poppler-document.h
   /usr/include/poppler/glib/poppler-enums.h
   /usr/include/poppler/glib/poppler-features.h
+  /usr/include/poppler/glib/poppler-form-field.h
   /usr/include/poppler/glib/poppler-page.h
   /usr/include/poppler/glib/poppler.h
   /usr/include/poppler/goo/FixedPoint.h
@@ -359,9 +368,9 @@ Files included in the binary packages:
   /usr/include/poppler/goo/gmem.h
   /usr/include/poppler/goo/gtypes.h
   /usr/include/poppler/poppler-config.h
-  /usr/include/poppler/poppler-link-qt3.h
-  /usr/include/poppler/poppler-page-transition.h
-  /usr/include/poppler/poppler-qt.h
+  /usr/include/poppler/qt3/poppler-link-qt3.h
+  /usr/include/poppler/qt3/poppler-page-transition.h
+  /usr/include/poppler/qt3/poppler-qt.h
   /usr/include/poppler/splash/Splash.h
   /usr/include/poppler/splash/SplashBitmap.h
   /usr/include/poppler/splash/SplashClip.h
@@ -385,10 +394,13 @@ Files included in the binary packages:
   /usr/include/poppler/splash/SplashTypes.h
   /usr/include/poppler/splash/SplashXPath.h
   /usr/include/poppler/splash/SplashXPathScanner.h
+  /usr/lib/libpoppler-glib.a
   /usr/lib/libpoppler-glib.dll.a
   /usr/lib/libpoppler-glib.la
+  /usr/lib/libpoppler-qt.a
   /usr/lib/libpoppler-qt.dll.a
   /usr/lib/libpoppler-qt.la
+  /usr/lib/libpoppler.a
   /usr/lib/libpoppler.dll.a
   /usr/lib/libpoppler.la
   /usr/lib/pkgconfig/poppler-cairo.pc
@@ -402,8 +414,10 @@ Files included in the binary packages:
   /usr/share/gtk-doc/html/poppler/index.sgml
   /usr/share/gtk-doc/html/poppler/left.png
   /usr/share/gtk-doc/html/poppler/poppler-poppler-action.html
+  /usr/share/gtk-doc/html/poppler/poppler-poppler-attachment.html
   /usr/share/gtk-doc/html/poppler/poppler-poppler-document.html
   /usr/share/gtk-doc/html/poppler/poppler-poppler-enums.html
+  /usr/share/gtk-doc/html/poppler/poppler-poppler-form-field.html
   /usr/share/gtk-doc/html/poppler/poppler-poppler-page.html
   /usr/share/gtk-doc/html/poppler/poppler-poppler.html
   /usr/share/gtk-doc/html/poppler/poppler.devhelp
@@ -415,6 +429,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 0.6-1 -----
+Version and ABI bump.
 
 ----- version 0.5.4-2 -----
 Includes Gentoo patches for CVE-2007-0104 and CVE-2007-3387.
