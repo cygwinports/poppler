@@ -32,12 +32,12 @@ Runtime requirements:
   libjpeg62-6b-12
   libxml2-2.6.30-1
 (libpoppler-glib)
-  gdk-pixbuf2-2.10.14-1
-  glib2-2.12.13-1
-  gtk2-x11-2.10.14-1
-  libcairo2-1.4.10-1
+  gdk-pixbuf2-2.12.2-1
+  glib2-2.14.4-1
+  gtk2-x11-2.12.2-1
+  libcairo2-1.4.12-1
 (libpoppler-qt)
-  qt3-3.3.8-3
+  qt3-3.3.8-4
 
 Build requirements:
 (besides corresponding -devel packages)
@@ -45,7 +45,7 @@ Build requirements:
   autoconf2.5-2.61-1
   automake1.9-1.9.6-2
   binutils-20060817-1
-  cygport-0.2.11-1
+  cygport-0.3.7-1
   gawk-3.1.5-4
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
@@ -63,20 +63,20 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.6-X-src.tar.bz2
+  unpack poppler-0.6.2-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.6-X.cygport all
+  cygport ./poppler-0.6.2-X.cygport all
 
 This will create:
-  /usr/src/libpoppler2-0.6-X.tar.bz2
-  /usr/src/libpoppler-devel-0.6-X.tar.bz2
-  /usr/src/libpoppler-glib_2-0.6-X.tar.bz2
-  /usr/src/libpoppler-qt_2-0.6-X.tar.bz2
-  /usr/src/poppler-0.6-X-src.tar.bz2
-  /usr/src/poppler-0.6-X.tar.bz2
-  /usr/src/poppler-data-0.6-X.tar.bz2
+  /usr/src/libpoppler2-0.6.2-X.tar.bz2
+  /usr/src/libpoppler-devel-0.6.2-X.tar.bz2
+  /usr/src/libpoppler-glib_2-0.6.2-X.tar.bz2
+  /usr/src/libpoppler-qt_2-0.6.2-X.tar.bz2
+  /usr/src/poppler-0.6.2-X-src.tar.bz2
+  /usr/src/poppler-0.6.2-X.tar.bz2
+  /usr/src/poppler-data-0.6.2-X.tar.bz2
 
 -------------------------------------------
 
@@ -91,14 +91,14 @@ Files included in the binary packages:
   /usr/bin/pdftoppm.exe
   /usr/bin/pdftops.exe
   /usr/bin/pdftotext.exe
-  /usr/share/doc/Cygwin/poppler-0.6.README
-  /usr/share/doc/poppler-0.6/AUTHORS
-  /usr/share/doc/poppler-0.6/COPYING
-  /usr/share/doc/poppler-0.6/ChangeLog
-  /usr/share/doc/poppler-0.6/INSTALL
-  /usr/share/doc/poppler-0.6/NEWS
-  /usr/share/doc/poppler-0.6/README
-  /usr/share/doc/poppler-0.6/TODO
+  /usr/share/doc/Cygwin/poppler-0.6.2.README
+  /usr/share/doc/poppler-0.6.2/AUTHORS
+  /usr/share/doc/poppler-0.6.2/COPYING
+  /usr/share/doc/poppler-0.6.2/ChangeLog
+  /usr/share/doc/poppler-0.6.2/INSTALL
+  /usr/share/doc/poppler-0.6.2/NEWS
+  /usr/share/doc/poppler-0.6.2/README
+  /usr/share/doc/poppler-0.6.2/TODO
   /usr/share/man/man1/pdffonts.1.gz
   /usr/share/man/man1/pdfimages.1.gz
   /usr/share/man/man1/pdfinfo.1.gz
@@ -429,6 +429,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 0.6.2-1 -----
+Version bump.  poppler-data updated to 0.1.1.
 
 ----- version 0.6-1 -----
 Version and ABI bump.
