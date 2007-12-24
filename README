@@ -63,20 +63,20 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.6.2-X-src.tar.bz2
+  unpack poppler-0.6.3-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.6.2-X.cygport all
+  cygport ./poppler-0.6.3-X.cygport all
 
 This will create:
-  /usr/src/libpoppler2-0.6.2-X.tar.bz2
-  /usr/src/libpoppler-devel-0.6.2-X.tar.bz2
-  /usr/src/libpoppler-glib_2-0.6.2-X.tar.bz2
-  /usr/src/libpoppler-qt_2-0.6.2-X.tar.bz2
-  /usr/src/poppler-0.6.2-X-src.tar.bz2
-  /usr/src/poppler-0.6.2-X.tar.bz2
-  /usr/src/poppler-data-0.6.2-X.tar.bz2
+  /usr/src/libpoppler2-0.6.3-X.tar.bz2
+  /usr/src/libpoppler-devel-0.6.3-X.tar.bz2
+  /usr/src/libpoppler-glib_2-0.6.3-X.tar.bz2
+  /usr/src/libpoppler-qt_2-0.6.3-X.tar.bz2
+  /usr/src/poppler-0.6.3-X-src.tar.bz2
+  /usr/src/poppler-0.6.3-X.tar.bz2
+  /usr/src/poppler-data-0.6.3-X.tar.bz2
 
 -------------------------------------------
 
@@ -91,14 +91,14 @@ Files included in the binary packages:
   /usr/bin/pdftoppm.exe
   /usr/bin/pdftops.exe
   /usr/bin/pdftotext.exe
-  /usr/share/doc/Cygwin/poppler-0.6.2.README
-  /usr/share/doc/poppler-0.6.2/AUTHORS
-  /usr/share/doc/poppler-0.6.2/COPYING
-  /usr/share/doc/poppler-0.6.2/ChangeLog
-  /usr/share/doc/poppler-0.6.2/INSTALL
-  /usr/share/doc/poppler-0.6.2/NEWS
-  /usr/share/doc/poppler-0.6.2/README
-  /usr/share/doc/poppler-0.6.2/TODO
+  /usr/share/doc/Cygwin/poppler-0.6.3.README
+  /usr/share/doc/poppler-0.6.3/AUTHORS
+  /usr/share/doc/poppler-0.6.3/COPYING
+  /usr/share/doc/poppler-0.6.3/ChangeLog
+  /usr/share/doc/poppler-0.6.3/INSTALL
+  /usr/share/doc/poppler-0.6.3/NEWS
+  /usr/share/doc/poppler-0.6.3/README
+  /usr/share/doc/poppler-0.6.3/TODO
   /usr/share/man/man1/pdffonts.1.gz
   /usr/share/man/man1/pdfimages.1.gz
   /usr/share/man/man1/pdfinfo.1.gz
@@ -429,6 +429,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 0.6.3-1 -----
+Version bump.  poppler-data updated to 0.2.0.
 
 ----- version 0.6.2-1 -----
 Version bump.  poppler-data updated to 0.1.1.
