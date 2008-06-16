@@ -1,5 +1,4 @@
 category: Libs Text
-external-source: poppler
 sdesc: "PDF rendering library (encoding data)"
 ldesc: "Poppler is a fork of the xpdf PDF viewer developed by Derek Noonburg
 of Glyph and Cog, LLC.  The purpose of forking xpdf is twofold.
