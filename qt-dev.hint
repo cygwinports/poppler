@@ -1,7 +1,7 @@
-category: Libs Text
-requires: cygwin libpoppler3 libfontconfig-devel libfreetype2-devel libjpeg-devel libxml2-devel
+category: KDE Libs Text
+requires: cygwin libpoppler-qt_2 libpoppler-devel qt3-devel
 external-source: poppler
-sdesc: "PDF rendering library (development)"
+sdesc: "PDF rendering library (Qt3 interface)"
 ldesc: "Poppler is a fork of the xpdf PDF viewer developed by Derek Noonburg
 of Glyph and Cog, LLC.  The purpose of forking xpdf is twofold.
 First, we want to provide PDF rendering functionality as a shared
