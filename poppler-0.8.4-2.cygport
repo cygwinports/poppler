@@ -1,0 +1,47 @@
+inherit qt4 gnome2
+
+DESCRIPTION="PDF rendering library"
+HOMEPAGE="http://poppler.freedesktop.org/"
+SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
+PATCH_URI="mirror://portage/app-text/${PN}/files/${PN}-0.8.3-page-init.patch"
+
+c_abi=3
+glib_abi=3
+qt_abi=2
+qt4_abi=3
+PKG_NAMES="${PN} lib${PN}${c_abi} lib${PN}-devel"
+PKG_HINTS="setup lib devel"
+PKG_CONTENTS[0]="usr/bin/*.exe usr/share/doc/ usr/share/man/"
+PKG_CONTENTS[1]="usr/bin/cygpoppler-${c_abi}.dll"
+
+pkg_n=3
+for binding in glib qt qt4
+do
+	case ${binding} in
+		qt)	bind_inc=qt3 ;;
+		*)	bind_inc=${binding} ;;
+	esac
+
+	abi=${binding}_abi
+	PKG_NAMES+=" lib${PN}-${binding}_${!abi} lib${PN}-${binding}-devel"
+	PKG_HINTS+=" ${binding} ${binding}-dev"
+	PKG_CONTENTS[((pkg_n++))]=" usr/bin/cygpoppler-${binding}-${!abi}.dll"
+	PKG_CONTENTS[((pkg_n++))]=" usr/include/${PN}/${bind_inc}/
+	                            usr/lib/lib${PN}-${binding}.*
+	                            usr/lib/pkgconfig/${PN}-${binding}.pc"
+	PKG_CONTENTS[2]+=" --exclude=${bind_inc} --exclude=*-${binding}.*"
+done
+PKG_CONTENTS[2]+=" usr/include/ usr/lib/ usr/share/gtk-doc/"
+
+DIFF_EXCLUDES="${PN}-config.h"
+
+ACLOCAL_FLAGS="-I m4"
+
+CYGCONF_ARGS="
+	--disable-gtk-test
+	--enable-poppler-glib
+	--enable-poppler-qt
+	--enable-poppler-qt4
+	--enable-xpdf-headers
+"
+

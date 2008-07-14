@@ -38,13 +38,17 @@ Runtime requirements:
   libcairo2-1.6.4-1
 (libpoppler-qt)
   qt3-3.3.8-4
+(libpoppler-qt4)
+  libQtCore4-4.4.0-1
+  libQtGui4-4.4.0-1
+  libQtXml4-4.4.0-1
 
 Build requirements:
 (besides corresponding -devel packages)
   autoconf2.5-2.61-1
   automake1.10-1.10.1-1
-  binutils-20060817-1
-  cygport-0.3.12-1
+  binutils-20080523-2
+  cygport-0.3.13-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
@@ -74,6 +78,8 @@ This will create:
   /usr/src/libpoppler-glib_3-0.8.4-X.tar.bz2
   /usr/src/libpoppler-qt-devel-0.8.4-X.tar.bz2
   /usr/src/libpoppler-qt_2-0.8.4-X.tar.bz2
+  /usr/src/libpoppler-qt4-devel-0.8.4-X.tar.bz2
+  /usr/src/libpoppler-qt4_3-0.8.4-X.tar.bz2
   /usr/src/libpoppler3-0.8.4-X.tar.bz2
   /usr/src/poppler-0.8.4-X-src.tar.bz2
   /usr/src/poppler-0.8.4-X.tar.bz2
@@ -114,6 +120,9 @@ Files included in the binary packages:
 
 (libpoppler-qt_2)
   /usr/bin/cygpoppler-qt-2.dll
+
+(libpoppler-qt4_3)
+  /usr/bin/cygpoppler-qt4-3.dll
 
 (libpoppler-devel)
   /usr/include/poppler/Annot.h
@@ -257,9 +266,24 @@ Files included in the binary packages:
   /usr/lib/libpoppler-qt.la
   /usr/lib/pkgconfig/poppler-qt.pc
 
+(libpoppler-qt4-devel)
+  /usr/include/poppler/qt4/poppler-annotation.h
+  /usr/include/poppler/qt4/poppler-export.h
+  /usr/include/poppler/qt4/poppler-form.h
+  /usr/include/poppler/qt4/poppler-link.h
+  /usr/include/poppler/qt4/poppler-optcontent.h
+  /usr/include/poppler/qt4/poppler-page-transition.h
+  /usr/include/poppler/qt4/poppler-qt4.h
+  /usr/lib/libpoppler-qt4.dll.a
+  /usr/lib/libpoppler-qt4.la
+  /usr/lib/pkgconfig/poppler-qt4.pc
+
 ------------------
 
 Port Notes:
+
+----- version 0.8.4-2 -----
+Added Qt4 bindings.
 
 ----- version 0.8.4-1 -----
 Version bump.
