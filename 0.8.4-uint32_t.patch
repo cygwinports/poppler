@@ -1,0 +1,12 @@
+--- origsrc/poppler-0.8.4/poppler/CairoOutputDev.cc	2008-06-28 10:11:01.000000000 -0500
++++ src/poppler-0.8.4/poppler/CairoOutputDev.cc	2008-07-08 04:15:45.312500000 -0500
+@@ -802,7 +802,9 @@
+   popTransparencyGroup();
+ }
+ 
++#ifndef __CYGWIN__
+ typedef unsigned int uint32_t;
++#endif
+ 
+ static uint32_t luminocity(uint32_t x)
+ {
