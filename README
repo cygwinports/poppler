@@ -39,15 +39,15 @@ Runtime requirements:
 (libpoppler-qt)
   qt3-3.3.8-4
 (libpoppler-qt4)
-  libQtCore4-4.4.0-1
-  libQtGui4-4.4.0-1
-  libQtXml4-4.4.0-1
+  libQtCore4-4.4.1-1
+  libQtGui4-4.4.1-1
+  libQtXml4-4.4.1-1
 
 Build requirements:
 (besides corresponding -devel packages)
   autoconf2.5-2.61-1
   automake1.10-1.10.1-1
-  binutils-20080523-2
+  binutils-20080524-2
   cygport-0.3.13-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
@@ -66,23 +66,23 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.8.5-X-src.tar.bz2
+  unpack poppler-0.8.6-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.8.5-X.cygport all
+  cygport ./poppler-0.8.6-X.cygport all
 
 This will create:
-  /usr/src/libpoppler-devel-0.8.5-X.tar.bz2
-  /usr/src/libpoppler-glib-devel-0.8.5-X.tar.bz2
-  /usr/src/libpoppler-glib_3-0.8.5-X.tar.bz2
-  /usr/src/libpoppler-qt-devel-0.8.5-X.tar.bz2
-  /usr/src/libpoppler-qt_2-0.8.5-X.tar.bz2
-  /usr/src/libpoppler-qt4-devel-0.8.5-X.tar.bz2
-  /usr/src/libpoppler-qt4_3-0.8.5-X.tar.bz2
-  /usr/src/libpoppler3-0.8.5-X.tar.bz2
-  /usr/src/poppler-0.8.5-X-src.tar.bz2
-  /usr/src/poppler-0.8.5-X.tar.bz2
+  /usr/src/libpoppler-devel-0.8.6-X.tar.bz2
+  /usr/src/libpoppler-glib-devel-0.8.6-X.tar.bz2
+  /usr/src/libpoppler-glib_3-0.8.6-X.tar.bz2
+  /usr/src/libpoppler-qt-devel-0.8.6-X.tar.bz2
+  /usr/src/libpoppler-qt_2-0.8.6-X.tar.bz2
+  /usr/src/libpoppler-qt4-devel-0.8.6-X.tar.bz2
+  /usr/src/libpoppler-qt4_3-0.8.6-X.tar.bz2
+  /usr/src/libpoppler3-0.8.6-X.tar.bz2
+  /usr/src/poppler-0.8.6-X-src.tar.bz2
+  /usr/src/poppler-0.8.6-X.tar.bz2
 
 -------------------------------------------
 
@@ -97,13 +97,13 @@ Files included in the binary packages:
   /usr/bin/pdftoppm.exe
   /usr/bin/pdftops.exe
   /usr/bin/pdftotext.exe
-  /usr/share/doc/poppler-0.8.5/AUTHORS
-  /usr/share/doc/poppler-0.8.5/COPYING
-  /usr/share/doc/poppler-0.8.5/ChangeLog
-  /usr/share/doc/poppler-0.8.5/INSTALL
-  /usr/share/doc/poppler-0.8.5/NEWS
-  /usr/share/doc/poppler-0.8.5/README
-  /usr/share/doc/poppler-0.8.5/TODO
+  /usr/share/doc/poppler-0.8.6/AUTHORS
+  /usr/share/doc/poppler-0.8.6/COPYING
+  /usr/share/doc/poppler-0.8.6/ChangeLog
+  /usr/share/doc/poppler-0.8.6/INSTALL
+  /usr/share/doc/poppler-0.8.6/NEWS
+  /usr/share/doc/poppler-0.8.6/README
+  /usr/share/doc/poppler-0.8.6/TODO
   /usr/share/man/man1/pdffonts.1.gz
   /usr/share/man/man1/pdfimages.1.gz
   /usr/share/man/man1/pdfinfo.1.gz
@@ -281,6 +281,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 0.8.6-1 -----
+Version bump.
 
 ----- version 0.8.5-1 -----
 Version bump.
