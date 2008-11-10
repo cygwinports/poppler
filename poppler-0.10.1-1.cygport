@@ -4,22 +4,20 @@ DESCRIPTION="PDF rendering library"
 HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
 PATCH_URI="
-	mirror://portage/app-text/${PN}/files/${PN}-0.8.3-page-init.patch
-	0.8.4-no-undefined.patch
 	0.8.4-find-qt3.patch
+	0.10.1-no-undefined.patch
 	0.8.4-uint32_t.patch
 "
 
-c_abi=3
-glib_abi=3
+c_abi=4
+glib_abi=${c_abi}
 qt_abi=2
 qt4_abi=3
 PKG_NAMES="${PN} lib${PN}${c_abi} lib${PN}-devel"
 PKG_HINTS="setup lib devel"
-PKG_CONTENTS[0]="usr/bin/*.exe usr/share/doc/ usr/share/man/"
-PKG_CONTENTS[1]="usr/bin/cygpoppler-${c_abi}.dll"
+poppler_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
+declare lib${PN}${c_abi}_CONTENTS="usr/bin/cygpoppler-${c_abi}.dll"
 
-pkg_n=3
 for binding in glib qt qt4
 do
 	case ${binding} in
@@ -30,13 +28,15 @@ do
 	abi=${binding}_abi
 	PKG_NAMES+=" lib${PN}-${binding}_${!abi} lib${PN}-${binding}-devel"
 	PKG_HINTS+=" ${binding} ${binding}-dev"
-	PKG_CONTENTS[((pkg_n++))]=" usr/bin/cygpoppler-${binding}-${!abi}.dll"
-	PKG_CONTENTS[((pkg_n++))]=" usr/include/${PN}/${bind_inc}/
+	declare \
+	lib${PN}_${binding}_${!abi}_CONTENTS="usr/bin/cygpoppler-${binding}-${!abi}.dll"
+	declare \
+	lib${PN}_${binding}_devel_CONTENTS="usr/include/${PN}/${bind_inc}/
 	                            usr/lib/lib${PN}-${binding}.*
 	                            usr/lib/pkgconfig/${PN}-${binding}.pc"
-	PKG_CONTENTS[2]+=" --exclude=${bind_inc} --exclude=*-${binding}.*"
+	libpoppler_devel_CONTENTS+=" --exclude=${bind_inc} --exclude=*-${binding}.*"
 done
-PKG_CONTENTS[2]+=" usr/include/ usr/lib/ usr/share/gtk-doc/"
+libpoppler_devel_CONTENTS+=" usr/include/ usr/lib/ usr/share/gtk-doc/"
 
 DIFF_EXCLUDES="${PN}-config.h"
 

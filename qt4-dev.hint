@@ -1,4 +1,4 @@
-category: KDE Libs Text
+category: KDE Graphics Text
 requires: cygwin libpoppler-qt4_3 libpoppler-devel libQtCore4-devel libQtGui4-devel libQtXml4-devel
 external-source: poppler
 sdesc: "PDF rendering library (Qt4 interface)"
