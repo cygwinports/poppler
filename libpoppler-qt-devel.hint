@@ -1,5 +1,5 @@
 category: KDE Graphics Text
-requires: cygwin libpoppler4 qt3
+requires: cygwin libpoppler-qt_2 libpoppler-devel libqt3-devel
 external-source: poppler
 sdesc: "PDF rendering library (Qt3 interface)"
 ldesc: "Poppler is a fork of the xpdf PDF viewer developed by Derek Noonburg

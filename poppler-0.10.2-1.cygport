@@ -14,7 +14,6 @@ glib_abi=${c_abi}
 qt_abi=2
 qt4_abi=3
 PKG_NAMES="${PN} lib${PN}${c_abi} lib${PN}-devel"
-PKG_HINTS="setup lib devel"
 poppler_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
 declare lib${PN}${c_abi}_CONTENTS="usr/bin/cygpoppler-${c_abi}.dll"
 
@@ -27,7 +26,6 @@ do
 
 	abi=${binding}_abi
 	PKG_NAMES+=" lib${PN}-${binding}_${!abi} lib${PN}-${binding}-devel"
-	PKG_HINTS+=" ${binding} ${binding}-dev"
 	declare \
 	lib${PN}_${binding}_${!abi}_CONTENTS="usr/bin/cygpoppler-${binding}-${!abi}.dll"
 	declare \
