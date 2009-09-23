@@ -26,25 +26,25 @@ way.  Another example is cairo, which provides high quality 2D
 rendering.  See the file TODO for a list of planned changes.
 
 Runtime requirements:
-  cygwin-1.7.0-49
-  libfontconfig1-2.6.0-10
-  libfreetype6-2.3.9-1
+  cygwin-1.7.0-61
+  libfontconfig1-2.7.1-1
+  libfreetype6-2.3.9-2
   libgcc1-4.3.2-2
-  libjpeg62-6b-20
+  libjpeg7-7-10
   libopenjpeg2-1.3-10
   libstdc++6-4.3.2-2
-  libxml2-2.7.3-10
-  poppler-data-0.2.1-1
+  libxml2-2.7.3-11
+  poppler-data-0.3.0-1
 (libpoppler-glib)
-  libgdk_pixbuf2.0_0-2.16.2-1
-  libglib2.0_0-2.20.3-1
-  libcairo2-1.8.6-10
+  libcairo2-1.8.8-1
+  libgdk_pixbuf2.0_0-2.16.6-1
+  libglib2.0_0-2.20.5-1
 (libpoppler-qt)
   libqt3-3.3.8b-11
 (libpoppler-qt4)
-  libQtCore4-4.5.1-1
-  libQtGui4-4.5.1-1
-  libQtXml4-4.5.1-1
+  libQtCore4-4.5.2-1
+  libQtGui4-4.5.2-1
+  libQtXml4-4.5.2-1
 
 Build requirements:
 (besides corresponding -devel packages)
@@ -69,220 +69,30 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.10.7-X-src.tar.bz2
+  unpack poppler-0.12.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.10.7-X.cygport all
+  cygport ./poppler-0.12.0-X.cygport all
 
 This will create:
-  /usr/src/libpoppler-devel-0.10.7-X.tar.bz2
-  /usr/src/libpoppler-glib-devel-0.10.7-X.tar.bz2
-  /usr/src/libpoppler-glib_4-0.10.7-X.tar.bz2
-  /usr/src/libpoppler-qt-devel-0.10.7-X.tar.bz2
-  /usr/src/libpoppler-qt_2-0.10.7-X.tar.bz2
-  /usr/src/libpoppler-qt4-devel-0.10.7-X.tar.bz2
-  /usr/src/libpoppler-qt4_3-0.10.7-X.tar.bz2
-  /usr/src/libpoppler4-0.10.7-X.tar.bz2
-  /usr/src/poppler-0.10.7-X-src.tar.bz2
-  /usr/src/poppler-0.10.7-X.tar.bz2
+  /usr/src/libpoppler-devel-0.12.0-X.tar.bz2
+  /usr/src/libpoppler-glib-devel-0.12.0-X.tar.bz2
+  /usr/src/libpoppler-glib_4-0.12.0-X.tar.bz2
+  /usr/src/libpoppler-qt-devel-0.12.0-X.tar.bz2
+  /usr/src/libpoppler-qt_2-0.12.0-X.tar.bz2
+  /usr/src/libpoppler-qt4-devel-0.12.0-X.tar.bz2
+  /usr/src/libpoppler-qt4_3-0.12.0-X.tar.bz2
+  /usr/src/libpoppler5-0.12.0-X.tar.bz2
+  /usr/src/poppler-0.12.0-X-src.tar.bz2
+  /usr/src/poppler-0.12.0-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary packages:
-
-(poppler)
-  /usr/bin/pdffonts.exe
-  /usr/bin/pdfimages.exe
-  /usr/bin/pdfinfo.exe
-  /usr/bin/pdftoabw.exe
-  /usr/bin/pdftohtml.exe
-  /usr/bin/pdftoppm.exe
-  /usr/bin/pdftops.exe
-  /usr/bin/pdftotext.exe
-  /usr/share/doc/poppler/AUTHORS
-  /usr/share/doc/poppler/COPYING
-  /usr/share/doc/poppler/ChangeLog
-  /usr/share/doc/poppler/NEWS
-  /usr/share/doc/poppler/README
-  /usr/share/doc/poppler/TODO
-  /usr/share/man/man1/pdffonts.1.gz
-  /usr/share/man/man1/pdfimages.1.gz
-  /usr/share/man/man1/pdfinfo.1.gz
-  /usr/share/man/man1/pdftohtml.1.gz
-  /usr/share/man/man1/pdftoppm.1.gz
-  /usr/share/man/man1/pdftops.1.gz
-  /usr/share/man/man1/pdftotext.1.gz
-
-(libpoppler4)
-  /usr/bin/cygpoppler-4.dll
-
-(libpoppler-glib_4)
-  /usr/bin/cygpoppler-glib-4.dll
-
-(libpoppler-qt_2)
-  /usr/bin/cygpoppler-qt-2.dll
-
-(libpoppler-qt4_3)
-  /usr/bin/cygpoppler-qt4-3.dll
-
-(libpoppler-devel)
-  /usr/include/poppler/Annot.h
-  /usr/include/poppler/Array.h
-  /usr/include/poppler/BaseFile.h
-  /usr/include/poppler/BuiltinFont.h
-  /usr/include/poppler/BuiltinFontTables.h
-  /usr/include/poppler/CMap.h
-  /usr/include/poppler/Catalog.h
-  /usr/include/poppler/CharCodeToUnicode.h
-  /usr/include/poppler/CharTypes.h
-  /usr/include/poppler/CompactFontTables.h
-  /usr/include/poppler/Decrypt.h
-  /usr/include/poppler/Dict.h
-  /usr/include/poppler/Error.h
-  /usr/include/poppler/ErrorCodes.h
-  /usr/include/poppler/FontEncodingTables.h
-  /usr/include/poppler/FontInfo.h
-  /usr/include/poppler/Form.h
-  /usr/include/poppler/Function.cc
-  /usr/include/poppler/Function.h
-  /usr/include/poppler/Gfx.h
-  /usr/include/poppler/GfxFont.h
-  /usr/include/poppler/GfxState.h
-  /usr/include/poppler/GlobalParams.h
-  /usr/include/poppler/JArithmeticDecoder.h
-  /usr/include/poppler/JBIG2Stream.h
-  /usr/include/poppler/JPXStream.h
-  /usr/include/poppler/Lexer.h
-  /usr/include/poppler/Link.h
-  /usr/include/poppler/Movie.h
-  /usr/include/poppler/NameToCharCode.h
-  /usr/include/poppler/NameToUnicodeTable.h
-  /usr/include/poppler/Object.h
-  /usr/include/poppler/OptionalContent.h
-  /usr/include/poppler/Outline.h
-  /usr/include/poppler/OutputDev.h
-  /usr/include/poppler/PDFDoc.h
-  /usr/include/poppler/PDFDocEncoding.h
-  /usr/include/poppler/PSOutputDev.h
-  /usr/include/poppler/PSTokenizer.h
-  /usr/include/poppler/Page.h
-  /usr/include/poppler/PageTransition.h
-  /usr/include/poppler/Parser.h
-  /usr/include/poppler/PreScanOutputDev.h
-  /usr/include/poppler/ProfileData.h
-  /usr/include/poppler/SecurityHandler.h
-  /usr/include/poppler/Sound.h
-  /usr/include/poppler/SplashOutputDev.h
-  /usr/include/poppler/Stream-CCITT.h
-  /usr/include/poppler/Stream.h
-  /usr/include/poppler/TextOutputDev.h
-  /usr/include/poppler/UTF8.h
-  /usr/include/poppler/UnicodeCClassTables.h
-  /usr/include/poppler/UnicodeCompTables.h
-  /usr/include/poppler/UnicodeDecompTables.h
-  /usr/include/poppler/UnicodeMap.h
-  /usr/include/poppler/UnicodeMapTables.h
-  /usr/include/poppler/UnicodeTypeTable.h
-  /usr/include/poppler/XRef.h
-  /usr/include/poppler/XpdfPluginAPI.h
-  /usr/include/poppler/goo/FixedPoint.h
-  /usr/include/poppler/goo/GooHash.h
-  /usr/include/poppler/goo/GooList.h
-  /usr/include/poppler/goo/GooMutex.h
-  /usr/include/poppler/goo/GooString.h
-  /usr/include/poppler/goo/GooTimer.h
-  /usr/include/poppler/goo/GooVector.h
-  /usr/include/poppler/goo/gfile.h
-  /usr/include/poppler/goo/gmem.h
-  /usr/include/poppler/goo/gtypes.h
-  /usr/include/poppler/poppler-config.h
-  /usr/include/poppler/splash/Splash.h
-  /usr/include/poppler/splash/SplashBitmap.h
-  /usr/include/poppler/splash/SplashClip.h
-  /usr/include/poppler/splash/SplashErrorCodes.h
-  /usr/include/poppler/splash/SplashFTFont.h
-  /usr/include/poppler/splash/SplashFTFontEngine.h
-  /usr/include/poppler/splash/SplashFTFontFile.h
-  /usr/include/poppler/splash/SplashFont.h
-  /usr/include/poppler/splash/SplashFontEngine.h
-  /usr/include/poppler/splash/SplashFontFile.h
-  /usr/include/poppler/splash/SplashFontFileID.h
-  /usr/include/poppler/splash/SplashGlyphBitmap.h
-  /usr/include/poppler/splash/SplashMath.h
-  /usr/include/poppler/splash/SplashPath.h
-  /usr/include/poppler/splash/SplashPattern.h
-  /usr/include/poppler/splash/SplashScreen.h
-  /usr/include/poppler/splash/SplashState.h
-  /usr/include/poppler/splash/SplashT1Font.h
-  /usr/include/poppler/splash/SplashT1FontEngine.h
-  /usr/include/poppler/splash/SplashT1FontFile.h
-  /usr/include/poppler/splash/SplashTypes.h
-  /usr/include/poppler/splash/SplashXPath.h
-  /usr/include/poppler/splash/SplashXPathScanner.h
-  /usr/lib/libpoppler.a
-  /usr/lib/libpoppler.dll.a
-  /usr/lib/libpoppler.la
-  /usr/lib/pkgconfig/poppler-cairo.pc
-  /usr/lib/pkgconfig/poppler-splash.pc
-  /usr/lib/pkgconfig/poppler.pc
-  /usr/share/gtk-doc/html/poppler/ch01.html
-  /usr/share/gtk-doc/html/poppler/home.png
-  /usr/share/gtk-doc/html/poppler/index.html
-  /usr/share/gtk-doc/html/poppler/index.sgml
-  /usr/share/gtk-doc/html/poppler/left.png
-  /usr/share/gtk-doc/html/poppler/poppler-poppler-action.html
-  /usr/share/gtk-doc/html/poppler/poppler-poppler-attachment.html
-  /usr/share/gtk-doc/html/poppler/poppler-poppler-document.html
-  /usr/share/gtk-doc/html/poppler/poppler-poppler-enums.html
-  /usr/share/gtk-doc/html/poppler/poppler-poppler-form-field.html
-  /usr/share/gtk-doc/html/poppler/poppler-poppler-page.html
-  /usr/share/gtk-doc/html/poppler/poppler-poppler.html
-  /usr/share/gtk-doc/html/poppler/poppler.devhelp
-  /usr/share/gtk-doc/html/poppler/poppler.devhelp2
-  /usr/share/gtk-doc/html/poppler/right.png
-  /usr/share/gtk-doc/html/poppler/style.css
-  /usr/share/gtk-doc/html/poppler/up.png
-
-(libpoppler-glib-devel)
-  /usr/include/poppler/glib/poppler-action.h
-  /usr/include/poppler/glib/poppler-annot.h
-  /usr/include/poppler/glib/poppler-attachment.h
-  /usr/include/poppler/glib/poppler-document.h
-  /usr/include/poppler/glib/poppler-enums.h
-  /usr/include/poppler/glib/poppler-features.h
-  /usr/include/poppler/glib/poppler-form-field.h
-  /usr/include/poppler/glib/poppler-page.h
-  /usr/include/poppler/glib/poppler.h
-  /usr/lib/libpoppler-glib.a
-  /usr/lib/libpoppler-glib.dll.a
-  /usr/lib/libpoppler-glib.la
-  /usr/lib/pkgconfig/poppler-glib.pc
-
-(libpoppler-qt-devel)
-  /usr/include/poppler/qt3/poppler-link-qt3.h
-  /usr/include/poppler/qt3/poppler-page-transition.h
-  /usr/include/poppler/qt3/poppler-qt.h
-  /usr/lib/libpoppler-qt.a
-  /usr/lib/libpoppler-qt.dll.a
-  /usr/lib/libpoppler-qt.la
-  /usr/lib/pkgconfig/poppler-qt.pc
-
-(libpoppler-qt4-devel)
-  /usr/include/poppler/qt4/poppler-annotation.h
-  /usr/include/poppler/qt4/poppler-export.h
-  /usr/include/poppler/qt4/poppler-form.h
-  /usr/include/poppler/qt4/poppler-link.h
-  /usr/include/poppler/qt4/poppler-optcontent.h
-  /usr/include/poppler/qt4/poppler-page-transition.h
-  /usr/include/poppler/qt4/poppler-qt4.h
-  /usr/lib/libpoppler-qt4.dll.a
-  /usr/lib/libpoppler-qt4.la
-  /usr/lib/pkgconfig/poppler-qt4.pc
-
-------------------
-
 Port Notes:
+
+----- version 0.12.0-1 -----
+Version bump, including ABI bump for libpoppler.
 
 ----- version 0.10.7-1 -----
 Initial release for Cygwin 1.7.

@@ -5,16 +5,16 @@ HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
 PATCH_URI="
 	0.8.4-find-qt3.patch
-	0.10.1-no-undefined.patch
+	0.12.0-no-undefined.patch
 "
 
-c_abi=4
-glib_abi=${c_abi}
+c_abi=5
+glib_abi=4
 qt_abi=2
 qt4_abi=3
-PKG_NAMES="${PN} lib${PN}${c_abi} lib${PN}-devel"
+PKG_NAMES="${PN} libpoppler${c_abi} libpoppler-devel"
 poppler_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
-declare lib${PN}${c_abi}_CONTENTS="usr/bin/cygpoppler-${c_abi}.dll"
+declare libpoppler${c_abi}_CONTENTS="usr/bin/cygpoppler-${c_abi}.dll"
 
 for binding in glib qt qt4
 do
@@ -24,12 +24,12 @@ do
 	esac
 
 	abi=${binding}_abi
-	PKG_NAMES+=" lib${PN}-${binding}_${!abi} lib${PN}-${binding}-devel"
+	PKG_NAMES+=" libpoppler-${binding}_${!abi} libpoppler-${binding}-devel"
 	declare \
-	lib${PN}_${binding}_${!abi}_CONTENTS="usr/bin/cygpoppler-${binding}-${!abi}.dll"
+	libpoppler_${binding}_${!abi}_CONTENTS="usr/bin/cygpoppler-${binding}-${!abi}.dll"
 	declare \
-	lib${PN}_${binding}_devel_CONTENTS="usr/include/${PN}/${bind_inc}/
-	                            usr/lib/lib${PN}-${binding}.*
+	libpoppler_${binding}_devel_CONTENTS="usr/include/${PN}/${bind_inc}/
+	                            usr/lib/libpoppler-${binding}.*
 	                            usr/lib/pkgconfig/${PN}-${binding}.pc"
 	libpoppler_devel_CONTENTS+=" --exclude=${bind_inc} --exclude=*-${binding}.*"
 done

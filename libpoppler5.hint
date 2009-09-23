@@ -1,7 +1,7 @@
-category: KDE Graphics Text
-requires: libgcc1 libpoppler5 libqt3 libstdc++6
+category: Graphics Text
+requires: libfontconfig1 libfreetype6 libgcc1 libjpeg7 libopenjpeg2 libstdc++6 libxml2 poppler-data
 external-source: poppler
-sdesc: "PDF rendering library (Qt3 interface)"
+sdesc: "PDF rendering library (generic runtime)"
 ldesc: "Poppler is a fork of the xpdf PDF viewer developed by Derek
 Noonburg of Glyph and Cog, LLC.  The purpose of forking xpdf is twofold.
 First, we want to provide PDF rendering functionality as a shared
