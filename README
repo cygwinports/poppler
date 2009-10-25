@@ -26,13 +26,13 @@ way.  Another example is cairo, which provides high quality 2D
 rendering.  See the file TODO for a list of planned changes.
 
 Runtime requirements:
-  cygwin-1.7.0-61
-  libfontconfig1-2.7.1-1
+  cygwin-1.7.0-62
+  libfontconfig1-2.7.3-1
   libfreetype6-2.3.9-2
-  libgcc1-4.3.2-2
+  libgcc1-4.3.4-1
   libjpeg7-7-10
   libopenjpeg2-1.3-10
-  libstdc++6-4.3.2-2
+  libstdc++6-4.3.4-1
   libxml2-2.7.3-11
   poppler-data-0.3.0-1
 (libpoppler-glib)
@@ -42,20 +42,20 @@ Runtime requirements:
 (libpoppler-qt)
   libqt3-3.3.8b-11
 (libpoppler-qt4)
-  libQtCore4-4.5.2-1
-  libQtGui4-4.5.2-1
-  libQtXml4-4.5.2-1
+  libQtCore4-4.5.3-1
+  libQtGui4-4.5.3-1
+  libQtXml4-4.5.3-1
 
 Build requirements:
 (besides corresponding -devel packages)
   autoconf2.5-2.63-10
   automake1.10-1.10.2-10
-  binutils-20080624-2
-  cygport-0.9.6-1
-  gawk-3.1.6-2
-  gcc4-core-4.3.2-2
-  gcc4-g++-4.3.2-2
-  libtool-2.2.7a-12
+  binutils-2.19.51-1
+  cygport-0.9.9-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-1
+  gcc4-g++-4.3.4-1
+  libtool-2.2.7a-14
   make-3.81-2
   pkg-config-0.23b-10
   sed-4.1.5-2
@@ -69,27 +69,30 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.12.0-X-src.tar.bz2
+  unpack poppler-0.12.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.12.0-X.cygport all
+  cygport ./poppler-0.12.1-X.cygport all
 
 This will create:
-  /usr/src/libpoppler-devel-0.12.0-X.tar.bz2
-  /usr/src/libpoppler-glib-devel-0.12.0-X.tar.bz2
-  /usr/src/libpoppler-glib_4-0.12.0-X.tar.bz2
-  /usr/src/libpoppler-qt-devel-0.12.0-X.tar.bz2
-  /usr/src/libpoppler-qt_2-0.12.0-X.tar.bz2
-  /usr/src/libpoppler-qt4-devel-0.12.0-X.tar.bz2
-  /usr/src/libpoppler-qt4_3-0.12.0-X.tar.bz2
-  /usr/src/libpoppler5-0.12.0-X.tar.bz2
-  /usr/src/poppler-0.12.0-X-src.tar.bz2
-  /usr/src/poppler-0.12.0-X.tar.bz2
+  /usr/src/libpoppler-devel-0.12.1-X.tar.bz2
+  /usr/src/libpoppler-glib-devel-0.12.1-X.tar.bz2
+  /usr/src/libpoppler-glib_4-0.12.1-X.tar.bz2
+  /usr/src/libpoppler-qt-devel-0.12.1-X.tar.bz2
+  /usr/src/libpoppler-qt_2-0.12.1-X.tar.bz2
+  /usr/src/libpoppler-qt4-devel-0.12.1-X.tar.bz2
+  /usr/src/libpoppler-qt4_3-0.12.1-X.tar.bz2
+  /usr/src/libpoppler5-0.12.1-X.tar.bz2
+  /usr/src/poppler-0.12.1-X-src.tar.bz2
+  /usr/src/poppler-0.12.1-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.12.1-1 -----
+Version bump.
 
 ----- version 0.12.0-1 -----
 Version bump, including ABI bump for libpoppler.

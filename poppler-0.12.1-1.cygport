@@ -3,10 +3,6 @@ inherit qt4 gnome2
 DESCRIPTION="PDF rendering library"
 HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
-PATCH_URI="
-	0.8.4-find-qt3.patch
-	0.12.0-no-undefined.patch
-"
 
 c_abi=5
 glib_abi=4
