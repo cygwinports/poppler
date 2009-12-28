@@ -1,0 +1,38 @@
+inherit qt4 gnome2
+
+DESCRIPTION="PDF rendering library"
+HOMEPAGE="http://poppler.freedesktop.org/"
+SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
+
+c_abi=5
+glib_abi=4
+qt4_abi=3
+
+PKG_NAMES="${PN} libpoppler${c_abi} libpoppler-devel"
+poppler_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
+declare libpoppler${c_abi}_CONTENTS="usr/bin/cygpoppler-${c_abi}.dll"
+libpoppler_devel_CONTENTS="--exclude=*glib* --exclude=*qt4*
+                           usr/include/ usr/lib/ usr/share/gtk-doc/"
+
+PKG_NAMES+=" libpoppler-glib_${glib_abi} libpoppler-glib-devel"
+declare libpoppler_glib_${glib_abi}_CONTENTS="usr/bin/cygpoppler-glib-${glib_abi}.dll"
+libpoppler_glib_devel_CONTENTS="usr/include/poppler/glib/ usr/lib/libpoppler-glib.*
+                                usr/lib/pkgconfig/poppler-glib.pc"
+
+PKG_NAMES+=" libpoppler-qt4_${qt4_abi} libpoppler-qt4-devel"
+declare libpoppler_qt4_${qt4_abi}_CONTENTS="usr/bin/cygpoppler-qt4-${qt4_abi}.dll"
+libpoppler_qt4_devel_CONTENTS="usr/include/poppler/qt4/ usr/lib/libpoppler-qt4.*
+                               usr/lib/pkgconfig/poppler-qt4.pc"
+
+DIFF_EXCLUDES="${PN}-config.h"
+
+ACLOCAL_FLAGS="-I m4"
+
+CYGCONF_ARGS="
+	--disable-gtk-test
+	--enable-poppler-glib
+	--disable-poppler-qt
+	--enable-poppler-qt4
+	--enable-xpdf-headers
+"
+
