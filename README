@@ -26,37 +26,39 @@ way.  Another example is cairo, which provides high quality 2D
 rendering.  See the file TODO for a list of planned changes.
 
 Runtime requirements:
-  cygwin-1.7.1-1
-  libfontconfig1-2.7.3-1
-  libfreetype6-2.3.11-1
+  cygwin-1.7.5-1
+  libfontconfig1-2.8.0-1
+  libfreetype6-2.3.12-1
   libgcc1-4.3.4-3
   libjpeg7-7-10
+  liblcms1-1.19-1
   libopenjpeg2-1.3-10
+  libpng12-1.2.35-10
   libstdc++6-4.3.4-3
   libxml2-2.7.6-1
-  poppler-data-0.4.0-1
+  poppler-data-0.4.2-1
 (libpoppler-glib)
-  libcairo2-1.8.8-1
-  libgdk_pixbuf2.0_0-2.18.3-1
-  libglib2.0_0-2.22.2-1
+  libcairo2-1.8.10-1
+  libgdk_pixbuf2.0_0-2.18.6-1
+  libglib2.0_0-2.22.4-2
 (libpoppler-qt4)
-  libQtCore4-4.5.3-2
-  libQtGui4-4.5.3-2
-  libQtXml4-4.5.3-2
+  libQtCore4-4.6.2-1
+  libQtGui4-4.6.2-1
+  libQtXml4-4.6.2-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.65-10
+  autoconf2.5-2.65-1
   automake1.11-1.11.1-10
-  binutils-2.19.51-1
-  cygport-0.9.10-1
+  binutils-2.20.51-1
+  cygport-0.9.83-1
   gawk-3.1.7-1
   gcc4-core-4.3.4-3
   gcc4-g++-4.3.4-3
-  libtool-2.2.7a-14
+  libtool-2.2.7a-15
   make-3.81-2
   pkg-config-0.23b-10
-  sed-4.1.5-2
+  sed-4.2.1-1
 
 Canonical website:
   http://poppler.freedesktop.org/
@@ -67,25 +69,28 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.12.3-X-src.tar.bz2
+  unpack poppler-0.12.4-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.12.3-X.cygport all
+  cygport ./poppler-0.12.4-X.cygport all
 
 This will create:
-  /usr/src/libpoppler-devel-0.12.3-X.tar.bz2
-  /usr/src/libpoppler-glib-devel-0.12.3-X.tar.bz2
-  /usr/src/libpoppler-glib_4-0.12.3-X.tar.bz2
-  /usr/src/libpoppler-qt4-devel-0.12.3-X.tar.bz2
-  /usr/src/libpoppler-qt4_3-0.12.3-X.tar.bz2
-  /usr/src/libpoppler5-0.12.3-X.tar.bz2
-  /usr/src/poppler-0.12.3-X-src.tar.bz2
-  /usr/src/poppler-0.12.3-X.tar.bz2
+  /usr/src/libpoppler-devel-0.12.4-X.tar.bz2
+  /usr/src/libpoppler-glib-devel-0.12.4-X.tar.bz2
+  /usr/src/libpoppler-glib_4-0.12.4-X.tar.bz2
+  /usr/src/libpoppler-qt4-devel-0.12.4-X.tar.bz2
+  /usr/src/libpoppler-qt4_3-0.12.4-X.tar.bz2
+  /usr/src/libpoppler5-0.12.4-X.tar.bz2
+  /usr/src/poppler-0.12.4-X-src.tar.bz2
+  /usr/src/poppler-0.12.4-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.12.4-1 -----
+Version bump.
 
 ----- version 0.12.3-1 -----
 Version bump.
