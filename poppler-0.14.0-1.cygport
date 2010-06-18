@@ -1,21 +1,27 @@
-inherit qt4 gnome2
+inherit qt4 gnome2 # cmake
 
 DESCRIPTION="PDF rendering library"
 HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
 
-c_abi=5
-glib_abi=4
+c_abi=6
+cpp_abi=0
+glib_abi=5
 qt4_abi=3
 
 PKG_NAMES="${PN} libpoppler${c_abi} libpoppler-devel"
 poppler_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
 declare libpoppler${c_abi}_CONTENTS="usr/bin/cygpoppler-${c_abi}.dll"
-libpoppler_devel_CONTENTS="--exclude=*glib* --exclude=*qt4*
+libpoppler_devel_CONTENTS="--exclude=*cpp* --exclude=*glib* --exclude=*qt4*
                            usr/include/ usr/lib/ usr/share/gtk-doc/"
 
-PKG_NAMES+=" libpoppler-glib_${glib_abi} libpoppler-glib-devel"
-declare libpoppler_glib_${glib_abi}_CONTENTS="usr/bin/cygpoppler-glib-${glib_abi}.dll"
+PKG_NAMES+=" libpoppler-cpp${cpp_abi} libpoppler-cpp-devel"
+declare libpoppler_cpp${cpp_abi}_CONTENTS="usr/bin/cygpoppler-cpp-${cpp_abi}.dll"
+libpoppler_cpp_devel_CONTENTS="usr/include/poppler/cpp/ usr/lib/libpoppler-cpp.*
+                               usr/lib/pkgconfig/poppler-cpp.pc"
+
+PKG_NAMES+=" libpoppler-glib${glib_abi} libpoppler-glib-devel"
+declare libpoppler_glib${glib_abi}_CONTENTS="usr/bin/cygpoppler-glib-${glib_abi}.dll"
 libpoppler_glib_devel_CONTENTS="usr/include/poppler/glib/ usr/lib/libpoppler-glib.*
                                 usr/lib/pkgconfig/poppler-glib.pc"
 
@@ -29,10 +35,14 @@ DIFF_EXCLUDES="${PN}-config.h"
 ACLOCAL_FLAGS="-I m4"
 
 CYGCONF_ARGS="
+	--disable-compile-warnings
 	--disable-gtk-test
+	--enable-libcurl
+	--enable-poppler-cpp
 	--enable-poppler-glib
 	--disable-poppler-qt
 	--enable-poppler-qt4
 	--enable-xpdf-headers
 "
 
+# CYGCMAKE_ARGS="-DENABLE_XPDF_HEADERS=ON -DENABLE_LIBCURL=ON"
