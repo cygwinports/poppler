@@ -1,5 +1,5 @@
 category: Graphics Text
-requires: libgcc1 libpoppler6 libstdc++6 libxml2
+requires: libgcc1 libpoppler7 libstdc++6 libxml2
 sdesc: "PDF rendering library (utilities)"
 ldesc: "Poppler is a fork of the xpdf PDF viewer developed by Derek
 Noonburg of Glyph and Cog, LLC.  The purpose of forking xpdf is twofold.

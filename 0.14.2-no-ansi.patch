@@ -1,0 +1,14 @@
+Does not compile with -ansi:
+
+--- origsrc/poppler-0.14.2/configure.ac	2010-08-10 12:55:20.000000000 -0500
++++ src/poppler-0.14.2/configure.ac	2010-08-22 21:53:27.364585600 -0500
+@@ -25,9 +25,6 @@ AC_PROG_CC_STDC
+ #  CXX="gcc"
+ #fi
+ AC_PROG_CXX
+-if test "x$GXX" = "xyes"; then
+-  CXXFLAGS="$CXXFLAGS -ansi"
+-fi
+ AC_PROG_INSTALL
+ 
+ dnl ##### Check for pkgconfig

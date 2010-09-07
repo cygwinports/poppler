@@ -26,37 +26,38 @@ way.  Another example is cairo, which provides high quality 2D
 rendering.  See the file TODO for a list of planned changes.
 
 Runtime requirements:
-  cygwin-1.7.5-1
+  cygwin-1.7.7-1
   libcurl4-7.20.1-1
   libfontconfig1-2.8.0-1
-  libfreetype6-2.3.12-1
-  libgcc1-4.3.4-3
+  libfreetype6-2.4.2-1
+  libgcc1-4.5.1-1
   libiconv2-1.13.1-1
-  libjpeg7-7-10
+  libjpeg8-8b-1
   liblcms1-1.19-1
   libopenjpeg2-1.3-10
-  libpng12-1.2.35-10
-  libstdc++6-4.3.4-3
+  libpng14-1.4.3-2
+  libstdc++6-4.5.1-1
   libxml2-2.7.7-1
-  poppler-data-0.4.2-1
+  poppler-data-0.4.3-1
 (libpoppler-glib)
   libcairo2-1.8.10-1
   libgdk_pixbuf2.0_0-2.20.1-1
   libglib2.0_0-2.24.1-1
 (libpoppler-qt4)
-  libQtCore4-4.6.2-1
-  libQtGui4-4.6.2-1
-  libQtXml4-4.6.2-1
+  libQtCore4-4.6.3-1
+  libQtGui4-4.6.3-1
+  libQtXml4-4.6.3-1
 
 Build requirements:
 (besides corresponding -devel packages)
   autoconf2.5-2.65-1
   automake1.11-1.11.1-10
   binutils-2.20.51-2
-  cygport-0.9.84-1
+  cygport-0.10.0-1
   gawk-3.1.7-1
-  gcc4-core-4.3.4-3
-  gcc4-g++-4.3.4-3
+  gcc4-core-4.5.1-1
+  gcc4-g++-4.5.1-1
+  gtk-doc-1.15-2
   libtool-2.2.7a-15
   make-3.81-2
   pkg-config-0.23b-10
@@ -71,27 +72,30 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.14.0-X-src.tar.bz2
+  unpack poppler-0.14.2-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.14.0-X.cygport all
+  cygport ./poppler-0.14.2-X.cygport all
 
 This will create:
-  /usr/src/libpoppler-cpp-devel-0.14.0-X.tar.bz2
-  /usr/src/libpoppler-cpp0-0.14.0-X.tar.bz2
-  /usr/src/libpoppler-devel-0.14.0-X.tar.bz2
-  /usr/src/libpoppler-glib-devel-0.14.0-X.tar.bz2
-  /usr/src/libpoppler-glib5-0.14.0-X.tar.bz2
-  /usr/src/libpoppler-qt4-devel-0.14.0-X.tar.bz2
-  /usr/src/libpoppler-qt4_3-0.14.0-X.tar.bz2
-  /usr/src/libpoppler6-0.14.0-X.tar.bz2
-  /usr/src/poppler-0.14.0-X-src.tar.bz2
-  /usr/src/poppler-0.14.0-X.tar.bz2
+  /usr/src/libpoppler-cpp-devel-0.14.2-X.tar.bz2
+  /usr/src/libpoppler-cpp0-0.14.2-X.tar.bz2
+  /usr/src/libpoppler-devel-0.14.2-X.tar.bz2
+  /usr/src/libpoppler-glib-devel-0.14.2-X.tar.bz2
+  /usr/src/libpoppler-glib5-0.14.2-X.tar.bz2
+  /usr/src/libpoppler-qt4-devel-0.14.2-X.tar.bz2
+  /usr/src/libpoppler-qt4_3-0.14.2-X.tar.bz2
+  /usr/src/libpoppler7-0.14.2-X.tar.bz2
+  /usr/src/poppler-0.14.2-X-src.tar.bz2
+  /usr/src/poppler-0.14.2-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.14.2-1 -----
+Version bump.
 
 ----- version 0.14.0-1 -----
 Version bump.
