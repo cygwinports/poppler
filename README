@@ -50,9 +50,8 @@ Runtime requirements:
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.65-1
-  automake1.11-1.11.1-10
   binutils-2.20.51-2
+  cmake-2.8.2-2
   cygport-0.10.0-1
   gawk-3.1.7-1
   gcc4-core-4.5.1-1
@@ -72,27 +71,31 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack poppler-0.14.2-X-src.tar.bz2
+  unpack poppler-0.14.4-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./poppler-0.14.2-X.cygport all
+  cygport ./poppler-0.14.4-X.cygport all
 
 This will create:
-  /usr/src/libpoppler-cpp-devel-0.14.2-X.tar.bz2
-  /usr/src/libpoppler-cpp0-0.14.2-X.tar.bz2
-  /usr/src/libpoppler-devel-0.14.2-X.tar.bz2
-  /usr/src/libpoppler-glib-devel-0.14.2-X.tar.bz2
-  /usr/src/libpoppler-glib5-0.14.2-X.tar.bz2
-  /usr/src/libpoppler-qt4-devel-0.14.2-X.tar.bz2
-  /usr/src/libpoppler-qt4_3-0.14.2-X.tar.bz2
-  /usr/src/libpoppler7-0.14.2-X.tar.bz2
-  /usr/src/poppler-0.14.2-X-src.tar.bz2
-  /usr/src/poppler-0.14.2-X.tar.bz2
+  /usr/src/libpoppler-cpp-devel-0.14.4-X.tar.bz2
+  /usr/src/libpoppler-cpp0-0.14.4-X.tar.bz2
+  /usr/src/libpoppler-devel-0.14.4-X.tar.bz2
+  /usr/src/libpoppler-glib-devel-0.14.4-X.tar.bz2
+  /usr/src/libpoppler-glib5-0.14.4-X.tar.bz2
+  /usr/src/libpoppler-qt4-devel-0.14.4-X.tar.bz2
+  /usr/src/libpoppler-qt4_3-0.14.4-X.tar.bz2
+  /usr/src/libpoppler7-0.14.4-X.tar.bz2
+  /usr/src/poppler-0.14.4-X-src.tar.bz2
+  /usr/src/poppler-0.14.4-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.14.4-1 -----
+Version bump.
+Built with cmake instead of autotools.
 
 ----- version 0.14.2-1 -----
 Version bump.

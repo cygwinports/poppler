@@ -1,5 +1,5 @@
 category: Graphics Text
-requires: libcurl4 libfontconfig1 libfreetype6 libgcc1 libjpeg7 liblcms1 libopenjpeg2 libpng12 libstdc++6 libxml2 poppler-data
+requires: libcurl4 libfontconfig1 libfreetype6 libgcc1 libjpeg8 liblcms1 libopenjpeg2 libpng14 libstdc++6 libxml2 poppler-data
 external-source: poppler
 sdesc: "PDF rendering library (generic runtime)"
 ldesc: "Poppler is a fork of the xpdf PDF viewer developed by Derek

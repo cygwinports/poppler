@@ -1,9 +1,8 @@
-inherit qt4 gnome2 # cmake
+inherit qt4 gnome2 cmake
 
 DESCRIPTION="PDF rendering library"
 HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
-PATCH_URI="0.14.2-no-ansi.patch"
 
 c_abi=7
 cpp_abi=0
@@ -14,7 +13,7 @@ PKG_NAMES="${PN} libpoppler${c_abi} libpoppler-devel"
 poppler_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
 declare libpoppler${c_abi}_CONTENTS="usr/bin/cygpoppler-${c_abi}.dll"
 libpoppler_devel_CONTENTS="--exclude=*cpp* --exclude=*glib* --exclude=*qt4*
-                           usr/include/ usr/lib/ usr/share/gtk-doc/"
+                           usr/include/ usr/lib/"
 
 PKG_NAMES+=" libpoppler-cpp${cpp_abi} libpoppler-cpp-devel"
 declare libpoppler_cpp${cpp_abi}_CONTENTS="usr/bin/cygpoppler-cpp-${cpp_abi}.dll"
@@ -24,7 +23,7 @@ libpoppler_cpp_devel_CONTENTS="usr/include/poppler/cpp/ usr/lib/libpoppler-cpp.*
 PKG_NAMES+=" libpoppler-glib${glib_abi} libpoppler-glib-devel"
 declare libpoppler_glib${glib_abi}_CONTENTS="usr/bin/cygpoppler-glib-${glib_abi}.dll"
 libpoppler_glib_devel_CONTENTS="usr/include/poppler/glib/ usr/lib/libpoppler-glib.*
-                                usr/lib/pkgconfig/poppler-glib.pc"
+                                usr/lib/pkgconfig/poppler-glib.pc usr/share/gtk-doc/"
 
 PKG_NAMES+=" libpoppler-qt4_${qt4_abi} libpoppler-qt4-devel"
 declare libpoppler_qt4_${qt4_abi}_CONTENTS="usr/bin/cygpoppler-qt4-${qt4_abi}.dll"
@@ -33,17 +32,28 @@ libpoppler_qt4_devel_CONTENTS="usr/include/poppler/qt4/ usr/lib/libpoppler-qt4.*
 
 DIFF_EXCLUDES="${PN}-config.h"
 
-ACLOCAL_FLAGS="-I m4"
-
-CYGCONF_ARGS="
-	--disable-compile-warnings
-	--disable-gtk-test
-	--enable-libcurl
-	--enable-poppler-cpp
-	--enable-poppler-glib
-	--disable-poppler-qt
-	--enable-poppler-qt4
-	--enable-xpdf-headers
+CYGCMAKE_ARGS="
+	-DBUILD_CPP_TESTS=OFF
+	-DBUILD_GTK_TESTS=OFF
+	-DBUILD_QT4_TESTS=OFF
+	-DENABLE_CAIRO=ON
+	-DENABLE_CPP=ON
+	-DENABLE_GTK=ON
+	-DENABLE_JPEG=ON
+	-DENABLE_LCMS=ON
+	-DENABLE_LIBCURL=ON
+	-DENABLE_LIBOPENJPEG=ON
+	-DENABLE_PNG=ON
+	-DENABLE_SPLASH=ON
+	-DENABLE_XPDF_HEADERS=ON
+	-DWITH_QT3=NO
+	-DWITH_QT4=YES
 "
 
-# CYGCMAKE_ARGS="-DENABLE_XPDF_HEADERS=ON -DENABLE_LIBCURL=ON"
+src_install() {
+	cd ${B}
+	cyginstall
+
+	insinto /usr/share/gtk-doc/html/poppler
+	doins ${S}/glib/reference/html/*
+}
