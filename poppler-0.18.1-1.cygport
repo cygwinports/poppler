@@ -4,9 +4,21 @@ DESCRIPTION="PDF rendering library"
 HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
 
-c_abi=13
+DEPEND="pkgconfig(cairo)
+	pkgconfig(fontconfig)
+	pkgconfig(glib-2.0)
+	pkgconfig(lcms)
+	pkgconfig(libcurl)
+	pkgconfig(libpng)
+	pkgconfig(QtXml)
+	pkgconfig(QtGui)
+	libjpeg-devel
+	libopenjpeg-devel
+	libtiff-devel"
+
+c_abi=19
 cpp_abi=0
-glib_abi=6
+glib_abi=8
 qt4_abi=3
 
 PKG_NAMES="${PN} libpoppler${c_abi} libpoppler-devel"
@@ -20,11 +32,11 @@ declare libpoppler_cpp${cpp_abi}_CONTENTS="usr/bin/cygpoppler-cpp-${cpp_abi}.dll
 libpoppler_cpp_devel_CONTENTS="usr/include/poppler/cpp/ usr/lib/libpoppler-cpp.*
                                usr/lib/pkgconfig/poppler-cpp.pc"
 
-PKG_NAMES+=" libpoppler-glib${glib_abi} libpoppler-glib-devel girepository-Poppler0.16"
+PKG_NAMES+=" libpoppler-glib${glib_abi} libpoppler-glib-devel girepository-Poppler0.18"
 declare libpoppler_glib${glib_abi}_CONTENTS="usr/bin/cygpoppler-glib-${glib_abi}.dll"
 libpoppler_glib_devel_CONTENTS="usr/include/poppler/glib/ usr/lib/libpoppler-glib.*
                                 usr/lib/pkgconfig/poppler-glib.pc usr/share/gtk-doc/"
-girepository_Poppler0_16_CONTENTS="usr/*/gir*/Poppler-0.16.*"
+girepository_Poppler0_18_CONTENTS="usr/*/gir*/Poppler-0.18.*"
 
 PKG_NAMES+=" libpoppler-qt4_${qt4_abi} libpoppler-qt4-devel"
 declare libpoppler_qt4_${qt4_abi}_CONTENTS="usr/bin/cygpoppler-qt4-${qt4_abi}.dll"

@@ -1,5 +1,5 @@
 category: Graphics Text
-requires: libpoppler13 libgcc1 libiconv2 libstdc++6
+requires: libpoppler19 libgcc1 libiconv2 libstdc++6
 external-source: poppler
 sdesc: "PDF rendering library (STL C++ interface)"
 ldesc: "Poppler is a fork of the xpdf PDF viewer developed by Derek

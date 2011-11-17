@@ -1,5 +1,5 @@
 category: Gnome Graphics Text
-requires: libpoppler-glib6 libcairo-devel libglib2.0-devel libgdk_pixbuf2.0-devel libpoppler-devel
+requires: libpoppler-glib8 libcairo-devel libglib2.0-devel libgdk_pixbuf2.0-devel libpoppler-devel
 external-source: poppler
 sdesc: "PDF rendering library (GLib/GTK interface)"
 ldesc: "Poppler is a fork of the xpdf PDF viewer developed by Derek
