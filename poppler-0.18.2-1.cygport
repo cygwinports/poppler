@@ -3,7 +3,6 @@ inherit qt4 gnome2 cmake
 DESCRIPTION="PDF rendering library"
 HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
-PATCH_URI="0.18.1-cmake.patch"
 
 DEPEND="pkgconfig(cairo)
 	pkgconfig(fontconfig)
