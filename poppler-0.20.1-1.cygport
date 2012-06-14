@@ -16,10 +16,10 @@ DEPEND="pkgconfig(cairo)
 	libopenjpeg-devel
 	libtiff-devel"
 
-c_abi=19
+c_abi=26
 cpp_abi=0
 glib_abi=8
-qt4_abi=3
+qt4_abi=4
 
 PKG_NAMES="${PN} libpoppler${c_abi} libpoppler-devel"
 poppler_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
