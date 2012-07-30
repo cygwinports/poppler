@@ -1,13 +1,18 @@
-inherit qt4 gnome2 cmake
+inherit qt4 gnome2
 
-DESCRIPTION="PDF rendering library"
+CATEGORY="Graphics Text"
+SUMMARY="PDF rendering library"
+DESCRIPTION="Poppler is a fork of the xpdf PDF viewer which provides PDF
+rendering functionality as a shared library and replaces built-in code
+with dependencies that are now available as standard components of modern
+Unix desktop environments."
 HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
 
 DEPEND="pkgconfig(cairo)
 	pkgconfig(fontconfig)
 	pkgconfig(glib-2.0)
-	pkgconfig(lcms)
+	pkgconfig(lcms2)
 	pkgconfig(libcurl)
 	pkgconfig(libpng)
 	pkgconfig(QtXml)
@@ -22,49 +27,59 @@ glib_abi=8
 qt4_abi=4
 
 PKG_NAMES="${PN} libpoppler${c_abi} libpoppler-devel"
+poppler_SUMMARY="PDF manipulation utilities"
 poppler_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
+declare libpoppler${c_abi}_SUMMARY="${SUMMARY} (core runtime)"
+declare libpoppler${c_abi}_REQUIRES="poppler-data"
 declare libpoppler${c_abi}_CONTENTS="usr/bin/cygpoppler-${c_abi}.dll"
+declare libpoppler_devel_SUMMARY="${SUMMARY} (core development)"
 libpoppler_devel_CONTENTS="--exclude=*cpp* --exclude=*glib* --exclude=*qt4*
                            usr/include/ usr/lib/libpoppler.* usr/lib/pkgconfig/"
 
 PKG_NAMES+=" libpoppler-cpp${cpp_abi} libpoppler-cpp-devel"
+declare libpoppler_cpp${cpp_abi}_SUMMARY="${SUMMARY} (C++ STL runtime)"
 declare libpoppler_cpp${cpp_abi}_CONTENTS="usr/bin/cygpoppler-cpp-${cpp_abi}.dll"
+libpoppler_cpp_devel_SUMMARY="${SUMMARY} (C++ STL development)"
 libpoppler_cpp_devel_CONTENTS="usr/include/poppler/cpp/ usr/lib/libpoppler-cpp.*
                                usr/lib/pkgconfig/poppler-cpp.pc"
 
 PKG_NAMES+=" libpoppler-glib${glib_abi} libpoppler-glib-devel girepository-Poppler0.18"
+declare libpoppler_glib${glib_abi}_CATEGORY="${CATEGORY} Gnome"
+declare libpoppler_glib${glib_abi}_SUMMARY="${SUMMARY} (GObject runtime)"
 declare libpoppler_glib${glib_abi}_CONTENTS="usr/bin/cygpoppler-glib-${glib_abi}.dll"
+libpoppler_glib_devel_CATEGORY="${CATEGORY} Gnome"
+libpoppler_glib_devel_SUMMARY="${SUMMARY} (GObject development)"
 libpoppler_glib_devel_CONTENTS="usr/include/poppler/glib/ usr/lib/libpoppler-glib.*
                                 usr/lib/pkgconfig/poppler-glib.pc usr/share/gtk-doc/"
+girepository_Poppler0_18_CATEGORY="${CATEGORY} Gnome"
+girepository_Poppler0_18_SUMMARY="${SUMMARY} (GObject Introspection)"
 girepository_Poppler0_18_CONTENTS="usr/*/gir*/Poppler-0.18.*"
 
 PKG_NAMES+=" libpoppler-qt4_${qt4_abi} libpoppler-qt4-devel"
+declare libpoppler_qt4_${qt4_abi}_CATEGORY="${CATEGORY} KDE"
+declare libpoppler_qt4_${qt4_abi}_SUMMARY="${SUMMARY} (Qt4 runtime)"
 declare libpoppler_qt4_${qt4_abi}_CONTENTS="usr/bin/cygpoppler-qt4-${qt4_abi}.dll"
+libpoppler_qt4_devel_CATEGORY="${CATEGORY} KDE"
+libpoppler_qt4_devel_SUMMARY="${SUMMARY} (Qt4 development)"
+libpoppler_qt4_devel_REQUIRES="libQtCore4-devel libQtGui4-devel libQtXml4-devel"
 libpoppler_qt4_devel_CONTENTS="usr/include/poppler/qt4/ usr/lib/libpoppler-qt4.*
                                usr/lib/pkgconfig/poppler-qt4.pc"
 
 DISTCLEANFILES="glib/*.gir"
 DIFF_EXCLUDES="${PN}-config.h"
 
-src_compile() {
-	cd ${B}
-	cygcmake \
-		-DBUILD_CPP_TESTS=OFF -DBUILD_GTK_TESTS=OFF -DBUILD_QT4_TESTS=OFF \
-		-DENABLE_CAIRO=ON -DENABLE_CPP=ON -DENABLE_GTK=ON -DENABLE_JPEG=ON \
-		-DENABLE_LCMS=ON -DENABLE_LIBCURL=ON -DENABLE_LIBOPENJPEG=ON \
-		-DENABLE_PNG=ON -DENABLE_SPLASH=ON -DENABLE_XPDF_HEADERS=ON \
-		-DWITH_QT3=NO -DWITH_QT4=YES
+CYGCONF_ARGS="
+	--disable-gtk-test
+	--enable-libcurl
+	--enable-libjpeg
+	--enable-libopenjpeg
+	--enable-libpng
+	--enable-libtiff
+	--enable-poppler-cpp
+	--enable-poppler-glib
+	--enable-poppler-qt4
+	--enable-utils
+	--enable-xpdf-headers
+"
 
-	# for gobject-introspection
-	export PATH="${B}/glib:${B}:$PATH"
-
-	cygmake
-}
-
-src_install() {
-	cd ${B}
-	cyginstall
-
-	insinto /usr/share/gtk-doc/html/poppler
-	doins ${S}/glib/reference/html/*
-}
+KEEP_LA_FILES="none"
