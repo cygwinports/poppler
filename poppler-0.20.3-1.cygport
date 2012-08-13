@@ -14,14 +14,14 @@ DEPEND="pkgconfig(cairo)
 	pkgconfig(glib-2.0)
 	pkgconfig(lcms2)
 	pkgconfig(libcurl)
+	pkgconfig(libopenjpeg)
 	pkgconfig(libpng)
 	pkgconfig(QtXml)
 	pkgconfig(QtGui)
 	libjpeg-devel
-	libopenjpeg-devel
 	libtiff-devel"
 
-c_abi=26
+c_abi=27
 cpp_abi=0
 glib_abi=8
 qt4_abi=4
