@@ -1,5 +1,8 @@
 inherit qt4 gnome2
 
+NAME="poppler"
+VERSION=0.20.5
+RELEASE=1
 CATEGORY="Graphics Text"
 SUMMARY="PDF rendering library"
 DESCRIPTION="Poppler is a fork of the xpdf PDF viewer which provides PDF
@@ -21,7 +24,7 @@ DEPEND="pkgconfig(cairo)
 	libjpeg-devel
 	libtiff-devel"
 
-c_abi=27
+c_abi=28
 cpp_abi=0
 glib_abi=8
 qt4_abi=4
