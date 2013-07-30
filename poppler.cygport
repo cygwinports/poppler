@@ -1,16 +1,16 @@
 inherit qt4 gnome2
 
 NAME="poppler"
-VERSION=0.20.5
-RELEASE=3
-CATEGORY="Graphics Text"
+VERSION=0.22.5
+RELEASE=1
+CATEGORY="Libs"
 SUMMARY="PDF rendering library"
 DESCRIPTION="Poppler is a fork of the xpdf PDF viewer which provides PDF
 rendering functionality as a shared library and replaces built-in code
 with dependencies that are now available as standard components of modern
 Unix desktop environments."
 HOMEPAGE="http://poppler.freedesktop.org/"
-SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
+SRC_URI="http://poppler.freedesktop.org/${NAME}-${VERSION}.tar.gz"
 
 DEPEND="pkgconfig(cairo)
 	pkgconfig(fontconfig)
@@ -24,12 +24,13 @@ DEPEND="pkgconfig(cairo)
 	libjpeg-devel
 	libtiff-devel"
 
-c_abi=28
+c_abi=37
 cpp_abi=0
 glib_abi=8
 qt4_abi=4
 
-PKG_NAMES="${PN} libpoppler${c_abi} libpoppler-devel"
+PKG_NAMES="${NAME} libpoppler${c_abi} libpoppler-devel"
+poppler_CATEGORY="Graphics"
 poppler_SUMMARY="PDF manipulation utilities"
 poppler_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
 declare libpoppler${c_abi}_SUMMARY="${SUMMARY} (core runtime)"
@@ -69,7 +70,7 @@ libpoppler_qt4_devel_CONTENTS="usr/include/poppler/qt4/ usr/lib/libpoppler-qt4.*
                                usr/lib/pkgconfig/poppler-qt4.pc"
 
 DISTCLEANFILES="glib/*.gir"
-DIFF_EXCLUDES="${PN}-config.h"
+DIFF_EXCLUDES="poppler-config.h"
 
 CYGCONF_ARGS="
 	--disable-gtk-test
@@ -83,6 +84,6 @@ CYGCONF_ARGS="
 	--enable-poppler-qt4
 	--enable-utils
 	--enable-xpdf-headers
+	MOCQT4=${QT4_MOC}
 "
 
-KEEP_LA_FILES="none"
