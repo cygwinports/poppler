@@ -1,8 +1,8 @@
 inherit qt4 qt5 gnome2
 
 NAME="poppler"
-VERSION=0.24.5
-RELEASE=2
+VERSION=0.26.5
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="PDF rendering library"
 DESCRIPTION="Poppler is a fork of the xpdf PDF viewer which provides PDF
@@ -11,9 +11,6 @@ with dependencies that are now available as standard components of modern
 Unix desktop environments."
 HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${NAME}-${VERSION}.tar.xz"
-PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/poppler.git/plain/poppler-0.24.2-mocversiongrep.patch?h=f20
-"
 
 DEPEND="pkgconfig(cairo)
 	pkgconfig(fontconfig)
@@ -28,7 +25,7 @@ DEPEND="pkgconfig(cairo)
 	libjpeg-devel
 	libtiff-devel"
 
-c_abi=44
+c_abi=46
 cpp_abi=0
 glib_abi=8
 qt4_abi=4
