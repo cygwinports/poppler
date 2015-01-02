@@ -2,7 +2,7 @@ inherit qt4 qt5 gnome2
 
 NAME="poppler"
 VERSION=0.26.5
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="PDF rendering library"
 DESCRIPTION="Poppler is a fork of the xpdf PDF viewer which provides PDF
