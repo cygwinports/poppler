@@ -1,0 +1,11 @@
+--- origsrc/poppler-0.30.0/qt5/src/poppler-export.h	2014-02-09 09:10:34.000000000 -0600
++++ src/poppler-0.30.0/qt5/src/poppler-export.h	2015-04-28 13:31:48.527867100 -0500
+@@ -2,7 +2,7 @@
+ * This file is used to set the poppler_qt5_EXPORT macros right.
+ * This is needed for setting the visibility on windows, it will have no effect on other platforms.
+ */
+-#if defined(_WIN32)
++#if defined(_WIN32) || defined(__CYGWIN__)
+ # define _POPPLER_QT5_LIB_EXPORT __declspec(dllexport)
+ # define _POPPLER_QT5_LIB_IMPORT __declspec(dllimport)
+ #elif defined(__GNUC__)
