@@ -2,7 +2,7 @@ inherit qt4 qt5 gnome2
 
 NAME="poppler"
 VERSION=0.36.0
-RELEASE=2
+RELEASE=3
 CATEGORY="Libs"
 SUMMARY="PDF rendering library"
 DESCRIPTION="Poppler is a fork of the xpdf PDF viewer which provides PDF
@@ -14,6 +14,7 @@ SRC_URI="http://poppler.freedesktop.org/${NAME}-${VERSION}.tar.xz"
 PATCH_URI="
 	http://pkgs.fedoraproject.org/cgit/poppler.git/plain/poppler-0.30.0-rotated-words-selection.patch?h=f22
 	http://pkgs.fedoraproject.org/cgit/poppler.git/plain/poppler-0.24.2-mocversiongrep.patch?h=f22
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/poppler-0.34.0-heap-buffer-overflow-fix.patch?h=f23
 	0.30.0-cygwin-dllexport.patch
 "
 
