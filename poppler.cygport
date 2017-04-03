@@ -1,8 +1,8 @@
 inherit qt4 qt5 gnome2
 
 NAME="poppler"
-VERSION=0.45.0
-RELEASE=2
+VERSION=0.52.0
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="PDF rendering library"
 DESCRIPTION="Poppler is a fork of the xpdf PDF viewer which provides PDF
@@ -13,8 +13,6 @@ HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${NAME}-${VERSION}.tar.xz"
 PATCH_URI="
 	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/poppler-0.30.0-rotated-words-selection.patch
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/poppler-0.45.0-cmsGetColorSpace.patch?h=f25
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/poppler-0.24.2-mocversiongrep.patch
 	0.30.0-cygwin-dllexport.patch
 "
 
@@ -32,7 +30,7 @@ DEPEND="pkgconfig(cairo)
 	libtiff-devel"
 
 # the core is API/ABI unstable, so this changes with every release
-c_abi=62
+c_abi=66
 # the bindings are API/ABI stable, so these should NOT need to change
 cpp_abi=0
 glib_abi=8
