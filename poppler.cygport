@@ -2,7 +2,7 @@ inherit qt4 qt5 gnome2
 
 NAME="poppler"
 VERSION=0.52.0
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="PDF rendering library"
 DESCRIPTION="Poppler is a fork of the xpdf PDF viewer which provides PDF
@@ -13,6 +13,23 @@ HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${NAME}-${VERSION}.tar.xz"
 PATCH_URI="
 	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/poppler-0.30.0-rotated-words-selection.patch
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/0001-pdfunite-Fix-crash-with-broken-documents.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/0001-Fix-memory-leak-and-probably-logic-bug-parsing-broke.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/0001-Fix-memory-leak-when-reconstructing-broken-files.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-7515-2.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-9775-1.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-9775-2.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-9776.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-9865.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14520.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14517.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14518.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14519.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14929.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14617.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14926.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14927.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14928.patch?h=f26
 	0.30.0-cygwin-dllexport.patch
 "
 
