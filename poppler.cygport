@@ -1,8 +1,8 @@
 inherit qt4 qt5 gnome2
 
 NAME="poppler"
-VERSION=0.52.0
-RELEASE=2
+VERSION=0.57.0
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="PDF rendering library"
 DESCRIPTION="Poppler is a fork of the xpdf PDF viewer which provides PDF
@@ -13,23 +13,15 @@ HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${NAME}-${VERSION}.tar.xz"
 PATCH_URI="
 	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/poppler-0.30.0-rotated-words-selection.patch
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/0001-pdfunite-Fix-crash-with-broken-documents.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/0001-Fix-memory-leak-and-probably-logic-bug-parsing-broke.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/0001-Fix-memory-leak-when-reconstructing-broken-files.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-7515-2.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-9775-1.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-9775-2.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-9776.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-9865.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14520.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14517.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14518.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14519.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14929.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14617.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14926.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14927.patch?h=f26
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14928.patch?h=f26
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14520.patch?h=f27
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14517.patch?h=f27
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14518.patch?h=f27
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14519.patch?h=f27
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14929.patch?h=f27
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14617.patch?h=f27
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14926.patch?h=f27
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14927.patch?h=f27
+	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14928.patch?h=f27
 	0.30.0-cygwin-dllexport.patch
 "
 
@@ -47,7 +39,7 @@ DEPEND="pkgconfig(cairo)
 	libtiff-devel"
 
 # the core is API/ABI unstable, so this changes with every release
-c_abi=66
+c_abi=68
 # the bindings are API/ABI stable, so these should NOT need to change
 cpp_abi=0
 glib_abi=8
@@ -103,6 +95,7 @@ libpoppler_qt5_devel_CONTENTS="usr/include/poppler/qt5/ usr/lib/libpoppler-qt5.*
 DISTCLEANFILES="glib/*.gir"
 DIFF_EXCLUDES="poppler-config.h"
 
+CPPFLAGS+=" -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE"
 CYGCONF_ARGS="
 	--disable-gtk-test
 	--enable-libcurl
