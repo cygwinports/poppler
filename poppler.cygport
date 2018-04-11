@@ -1,7 +1,7 @@
-inherit qt4 qt5 gnome2
+inherit qt5 cmake
 
 NAME="poppler"
-VERSION=0.57.0
+VERSION=0.62.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="PDF rendering library"
@@ -12,16 +12,8 @@ Unix desktop environments."
 HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${NAME}-${VERSION}.tar.xz"
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/poppler-0.30.0-rotated-words-selection.patch
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14520.patch?h=f27
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14517.patch?h=f27
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14518.patch?h=f27
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14519.patch?h=f27
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14929.patch?h=f27
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14617.patch?h=f27
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14926.patch?h=f27
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14927.patch?h=f27
-	http://pkgs.fedoraproject.org/cgit/rpms/poppler.git/plain/CVE-2017-14928.patch?h=f27
+	http://src.fedoraproject.org/cgit/rpms/poppler.git/plain/poppler-0.30.0-rotated-words-selection.patch
+	http://src.fedoraproject.org/cgit/rpms/poppler.git/plain/0001-fix-build-with-gtk-doc-1.27.patch?h=f28
 	0.30.0-cygwin-dllexport.patch
 "
 
@@ -30,20 +22,17 @@ DEPEND="pkgconfig(cairo)
 	pkgconfig(glib-2.0)
 	pkgconfig(lcms2)
 	pkgconfig(libcurl)
-	pkgconfig(libopenjpeg)
+	pkgconfig(libopenjp2)
 	pkgconfig(libpng)
-	pkgconfig(QtXml)
-	pkgconfig(QtGui)
 	pkgconfig(Qt5Widgets)
 	libjpeg-devel
 	libtiff-devel"
 
 # the core is API/ABI unstable, so this changes with every release
-c_abi=68
+c_abi=73
 # the bindings are API/ABI stable, so these should NOT need to change
 cpp_abi=0
 glib_abi=8
-qt4_abi=4
 qt5_abi=1
 
 PKG_NAMES="${NAME} libpoppler${c_abi} libpoppler-devel"
@@ -76,14 +65,6 @@ libpoppler_glib_doc_CONTENTS="usr/share/gtk-doc/"
 girepository_Poppler0_18_SUMMARY="${SUMMARY} (GObject Introspection)"
 girepository_Poppler0_18_CONTENTS="usr/*/gir*/Poppler-0.18.*"
 
-PKG_NAMES+=" libpoppler-qt4_${qt4_abi} libpoppler-qt4-devel"
-declare libpoppler_qt4_${qt4_abi}_SUMMARY="${SUMMARY} (Qt4 runtime)"
-declare libpoppler_qt4_${qt4_abi}_CONTENTS="usr/bin/cygpoppler-qt4-${qt4_abi}.dll"
-libpoppler_qt4_devel_SUMMARY="${SUMMARY} (Qt4 development)"
-libpoppler_qt4_devel_REQUIRES="libQtCore4-devel libQtGui4-devel libQtXml4-devel"
-libpoppler_qt4_devel_CONTENTS="usr/include/poppler/qt4/ usr/lib/libpoppler-qt4.*
-                               usr/lib/pkgconfig/poppler-qt4.pc"
-
 PKG_NAMES+=" libpoppler-qt5_${qt5_abi} libpoppler-qt5-devel"
 declare libpoppler_qt5_${qt5_abi}_SUMMARY="${SUMMARY} (Qt5 runtime)"
 declare libpoppler_qt5_${qt5_abi}_CONTENTS="usr/bin/cygpoppler-qt5-${qt5_abi}.dll"
@@ -93,23 +74,21 @@ libpoppler_qt5_devel_CONTENTS="usr/include/poppler/qt5/ usr/lib/libpoppler-qt5.*
                                usr/lib/pkgconfig/poppler-qt5.pc"
 
 DISTCLEANFILES="glib/*.gir"
-DIFF_EXCLUDES="poppler-config.h"
+DIFF_EXCLUDES="poppler-config.h reference"
 
 CPPFLAGS+=" -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE"
-CYGCONF_ARGS="
-	--disable-gtk-test
-	--enable-libcurl
-	--enable-libjpeg
-	--enable-libopenjpeg=auto
-	--enable-libpng
-	--enable-libtiff
-	--enable-poppler-cpp
-	--enable-poppler-glib
-	--enable-poppler-qt4
-	--enable-poppler-qt5
-	--enable-utils
-	--enable-xpdf-headers
-	MOCQT4=${QT4_MOC}
-	MOCQT5=${QT5_MOC}
+# BUILD_QT5_TESTS: uses private symbols which are not dllexport'ed
+CYGCMAKE_ARGS="
+	-DENABLE_XPDF_HEADERS=ON
+	-DENABLE_CPP=ON
+	-DENABLE_GLIB=ON
+	-DENABLE_GTK_DOC=ON
+	-DENABLE_QT5=ON
+	-DBUILD_QT5_TESTS=OFF
+	-DENABLE_UTILS=ON
+	-DENABLE_LIBOPENJPEG=openjpeg2
+	-DENABLE_CMS=lcms2
+	-DENABLE_DCTDECODER=libjpeg
+	-DENABLE_LIBCURL=ON
+	-DENABLE_ZLIB=ON
 "
-
